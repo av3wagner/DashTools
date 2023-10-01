@@ -1,9 +1,9 @@
 from dash import Dash, html
-Myapp = Dash(__name__)
-Myapp.layout = html.Div([
+app = Dash(__name__)
+app.layout = html.Div([
     html.Div(children='Hello World')
 ])
-server=Myapp.server
+server=app.server
 
 if __name__ == '__main__':
-    Myapp.run(debug=True)
+    app.run(debug=True)
