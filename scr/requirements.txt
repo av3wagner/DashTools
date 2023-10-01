@@ -2,5 +2,9 @@ dash
 dash_auth
 dash_bootstrap_components
 pandas 
+#dash==2.9.3
+numpy
+scikit_learn
+plotly
 gunicorn
 #dash-tools
