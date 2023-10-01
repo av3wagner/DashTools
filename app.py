@@ -1,10 +1,10 @@
 from dash import Dash, html
 
-app = Dash(__name__)
-app.layout = html.Div([
+Myapp = Dash(__name__)
+Myapp.layout = html.Div([
     html.Div(children='Hello World')
 ])
-server=app.server
+server=Myapp.server
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    Myapp.run(debug=True)
