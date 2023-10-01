@@ -1,5 +1,6 @@
 dash
 dash_auth
+dash_bootstrap_components
 pandas 
 gunicorn
 #dash-tools
