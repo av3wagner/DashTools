@@ -213,6 +213,260 @@ app.layout = html.Div([
      ),html.Div(id='tabs-content-classes')
    ],style={"background": "#111111", 'marginLeft':5,'marginRight':20}
   ) 
+@app.callback(Output('tabs-content-classes', 'children'),
+              Input('tabs-with-classes', 'value'))
+
+def render_content(value): 
+    tab=value
+    print(tab)
+    print(svalue)
+    
+    if tab == 'Table0':
+        return [html.Div(
+            children=[
+                    html.H1('Карта Республики Казахстан (для обновления данных кликнике мышкой на выбранную область)', 
+                            style={'textAlign': 'center', 'font-size': '42px', 'color': '#00BFFF'}),                       
+                    html.Div(
+                        className="six columns",
+                        children=[html.Div(children=dcc.Graph(id='map_plot1',figure = fig_map(df)))
+                        ],style={'width':'49.50%',"height": '610px','display':'inline-block',
+                             'vertical-align':'middle',
+                             'border':'3px solid','marginLeft':16,'marginRight':0,'marginTop':0,
+                             'marginBottom':0, 'padding': '1px 1px 1px 2px'},
+                    ),
+                
+                    html.Div(className="twelve columns",  
+                    children=[html.Div(children=dcc.Graph(id='my-graph1')) 
+                     ],style={'width':'49.50%',"height": "610px",'display':'inline-block',
+                                 'vertical-align':'middle',
+                                 'border':'3px solid','marginLeft':3,'marginRight':0,'marginTop':0,
+                                 'marginBottom':0, 'padding': '1px 1px 1px 2px'}),
+                html.Div(
+                className="twelve columns", 
+                children=[html.Div(children=dash_table.DataTable(id='tod2022',
+                fixed_rows={"headers": True}, #, "data": 4},  
+                style_cell={'backgroundColor': '#111111',
+                            'color': 'yellow', 
+                            'textAlign':'left','minWidth': 45, 'maxWidth': 95, 'width': 65,
+                            'font_size': '16px',"fontWeight": "bold", 'whiteSpace':'normal','height':'auto'},         
+                
+                style_header={"backgroundColor": "#111111",
+                              "color": "yellow",
+                              "font-size": "18px",
+                              "fontWeight": "bold"
+                             },               
+
+                style_table={"height": "400px",
+                              "font-size": "18px",
+                              "margin": 0,
+                              "padding": "8px",
+                              "backgroundColor": "#111111"
+                              },
+                ), style={'width':'99.5%', 'height': '400px',  
+                           #'border':'3px solid',
+                           'marginLeft':3,'marginRight':0,'marginTop':0,
+                          },
+                )
+               ],style={'width':'99.5%',"height": "410px",'display':'inline-block','vertical-align':'middle',
+                  'border':'3px solid','marginLeft':16,'marginRight':0,'marginTop':0,
+                  'marginBottom':0, 'padding': '1px 1px 1px 2px'},      
+               ),
+            ])]         
+    
+    elif tab == 'Table1':
+        print("Table1 OK!")
+        return [html.Div([
+             html.H1('Демография', style={'textAlign': 'center', 'font-size': '42px', 'color': '#00BFFF'}),                
+             html.Div(className="six columns",
+                children=[
+                   html.Div(
+                    children=dcc.Graph(id="pie_graph") 
+                )
+            ],style={'width':'40.0%','display':'inline-block','vertical-align':'middle',
+                     'border':'3px solid','marginLeft':16,'marginRight':0,'marginTop':0,
+                     'marginBottom':0, 'padding': '5px 0px 0px 0px'},
+          ),
+          html.Div(
+                    className="twelve columns",
+                    children=[
+                        html.Div(
+                            children=dcc.Graph(id='bottom-bar-graph')
+                        )
+                    ],style={'width':'58.0%','display':'inline-block','vertical-align':'middle',
+                         'border':'3px solid','marginLeft':3,'marginRight':0,'marginTop':0,
+                         'marginBottom':0, 'padding': '5px 0px 0px 0px'},
+                ),
+       ])]
+    
+    elif tab == 'Table2':
+        print("Table2 OK!")
+        #value='Table2'
+        return [html.H1('Популяция',style={'textAlign': "center", 'font-size': '42px', 'color': '#00BFFF'}),
+            html.Div(className="six columns",
+                children=[html.Div(children=dcc.Graph(id="pop-graph"))
+              ],style={'width':'49.5%','display':'inline-block','vertical-align':'middle',
+                 'border':'3px solid','marginLeft':16,'marginRight':0,'marginTop':0,
+                 'marginBottom':0, 'padding': '5px 0px 0px 0px'},  
+            ),                 
+            html.Div(className="twelve columns",
+                    children=[html.Div(children=dcc.Graph(id='sun_graph'))    
+              ],style={'width':'49.5%', 'display':'inline-block',
+                             'vertical-align':'middle',
+                             'horizontal-align':'middle',                                  
+                             'border':'3px solid','marginLeft':3,'marginRight':0,'marginTop':0,
+                             'marginBottom':0, 'padding': '5px 0px 0px 0px'},                     
+             ),          
+        ]
+    
+    elif tab == 'Table3':
+        print("Table3 OK!")
+        #value='Table3'
+        return [html.H1('Возрастное распределение населения по данным ВОЗ (по избранным странам)',
+                         style={'textAlign': "center", 'font-size': '42px', 'color': '#00BFFF'}),
+           html.Div(
+            className="six columns",
+                children=[
+                   html.Div(    
+                    children=dcc.Graph(id='median_age_graph')
+                   )], style={'width':'49.5%',"height": "610px", 'display':'inline-block','vertical-align':'middle',
+                              'border':'3px solid','marginLeft':16,'marginRight':0,'marginTop':0,
+                              'marginBottom':0, 'padding': '5px 1px 1px 1px'},                                           
+                
+          ),
+                
+            html.Div([        
+             dcc.Graph(id='age_graph')
+             ],style={'width':'49.5%', "height": "610px", 'display':'inline-block','vertical-align':'middle',
+                      'border':'3px solid','marginLeft':3,'marginRight':0,'marginTop':0,
+                      'marginBottom':0, 'padding': '5px 1px 1px 1px'},                  
+          )                
+        ]
+     
+    elif tab == 'Table4':
+        return [html.H1("Прогноз заболеваемости с помощью анализа временных рядов (условные данные)", 
+                 style={'textAlign': 'center', 'font-size': '42px', 'color': '#00BFFF'}),
+            html.Div(
+                className="row",
+                children=[
+                html.Div(
+                  className="twelve columns",
+                  children=[
+                    html.Div(
+                       children=dcc.Graph(id="graph_close"),
+                      )
+                   ],style={'width':'98.5%', "height": '508px', 
+                            'border':'3px solid','marginLeft':16,'marginRight':0,'marginTop':5,
+                            'marginBottom':0, 'padding': '1px 1px 1px 2px'},
+                    ),
+                   ] 
+                  ),
+            ]    
+    
+    elif tab == 'Table5':
+        print("Table5 OK!")
+        return [html.Div([
+             html.H1('Анализ распределения населения области по годам наблюдения по официальным данным', style={'textAlign': 'center', 'font-size': '42px', 'color': '#00BFFF'}),                
+             html.Div(
+                    className="six columns",
+                    children=[html.Div(children=dcc.Graph(id='my-graph5'))
+                    ],style={'width':'49.5%',"height": "610px",'display':'inline-block','vertical-align':'middle',
+                         'border':'3px solid','marginLeft':3,'marginRight':0,'marginTop':0,
+                         'marginBottom':0, 'padding': '5px 0px 0px 0px'},
+                ),
+            
+             html.Div(className="six  columns",  
+                    children=[html.Div(children=dcc.Graph(id='popylation', figure=FigurePop(svalue))), 
+                     ],style={'width':'49.50%',"height": "610px",'display':'inline-block',
+                                 'vertical-align':'middle',
+                                 'border':'3px solid','marginLeft':3,'marginRight':0,'marginTop':0,
+                                 'marginBottom':0, 'padding': '1px 1px 1px 2px'}),  
+              html.Div(
+                className="twelve columns", 
+                children=[html.Div(children=dash_table.DataTable(id='table-year',
+               
+                                                                 
+                fixed_rows={"headers": True}, #, "data": 4},                                                 
+                style_cell={"width": "100px",
+                            'backgroundColor': '#111111',
+                            'color': 'yellow'          
+                             },
+                
+                style_header={"backgroundColor": "#111111",
+                              "color": "yellow",
+                              "font-size": "18px",
+                              "fontWeight": "bold"
+                             },               
+
+                style_table={"height": "400px",
+                              "font-size": "18px",
+                              "margin": 0,
+                              "padding": "8px",
+                              "backgroundColor": "#111111"
+                              }), style={'width':'99.5%', 'height': '405px',  
+                                 #'border':'3px solid',
+                                 'marginLeft':3,'marginRight':0,'marginTop':0,
+                                 'marginBottom':0, 'padding': '1px 1px 1px 2px'
+                                }
+          )                                                  
+        ],style={'width':'49.5%',"height": "410px",'display':'inline-block','vertical-align':'middle',
+                  'border':'3px solid',
+                  'marginLeft':3,'marginRight':0,'marginTop':0,
+                  'marginBottom':0, 'padding': '5px 0px 0px 0px'},
+       ),
+        
+       html.Div(
+                className="twelve columns", 
+                children=[html.Div(children=dash_table.DataTable(id='table2122',
+                fixed_rows={"headers": True}, #, "data": 4},                                                 
+                style_cell={"width": "100px",
+                            'backgroundColor': '#111111',
+                            'color': 'yellow'          
+                             },
+                
+                style_header={"backgroundColor": "#111111",
+                              "color": "yellow",
+                              "font-size": "18px",
+                              "fontWeight": "bold"
+                             },               
+
+                style_table={"height": "400px",
+                              "font-size": "18px",
+                              "margin": 0,
+                              "padding": "8px",
+                              "backgroundColor": "#111111"
+                              }), style={'width':'99.5%', 'height': '405px',  
+                                 #'border':'3px solid',
+                                 'marginLeft':3,'marginRight':0,'marginTop':0,
+                                 'marginBottom':0, 'padding': '1px 1px 1px 2px'
+                                }
+          )                                                  
+        ],style={'width':'49.5%',"height": "410px",'display':'inline-block','vertical-align':'middle',
+                  'border':'3px solid',
+                  'marginLeft':3,'marginRight':0,'marginTop':0,
+                  'marginBottom':0, 'padding': '5px 0px 0px 0px'},
+       ),     
+            
+   ])]
+    elif tab == 'Table6':
+        print("Table6 OK!")
+        return [html.Div([
+             html.H1('Анализ смертности населения по возрасту, полу, и МКБ-10 в 2022г', style={'textAlign': 'center', 'font-size': '42px', 'color': '#00BFFF'}),                
+             html.Div(className="six  columns",  
+                    children=[html.Div(children=dcc.Graph(id='my-graph6')), 
+                     ],style={'width':'49.50%',"height": "610px",'display':'inline-block',
+                                 'vertical-align':'middle',
+                                 'border':'3px solid','marginLeft':3,'marginRight':0,'marginTop':0,
+                                 'marginBottom':0, 'padding': '1px 1px 1px 2px'}),  
+            
+             html.Div(className="twelve columns",  
+                    children=[html.Div(children=dcc.Graph(id='mkb-graph', figure=FigureTod2(svalue)))
+                     ],style={'width':'49.50%',"height": "610px",'display':'inline-block',
+                                 'vertical-align':'middle',
+                                 'border':'3px solid','marginLeft':3,'marginRight':0,'marginTop':0,
+                                 'marginBottom':0, 'padding': '1px 1px 1px 2px'}),
+
+   ])]    
+
 
 if __name__ == '__main__':
     app.run(debug=True)
