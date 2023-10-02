@@ -65,12 +65,156 @@ tod2=mkb[mkb['F1'] != "All"]
 #excel_data_df = pd.read_excel('data/Pilot2022.xlsx', sheet_name='Population')
 #population=excel_data_df[excel_data_df['Age']!='All']
 #allpop = pd.read_excel('data/Pilot2022.xlsx', sheet_name='AllPopulation')
+#app.layout = html.Div([
+#    html.Div(children='Hello World')
+#])
+colors = {
+    'background': '#4A235A',
+    'background2': 'black',
+    'text': 'yellow'
+}
 
-app = dash.Dash(__name__)
+colors = ['red', '#9C0C38', 'orange']
+tabs_styles = {"height": "30px"}
+
+tab_style = {
+    "borderBottom": "1px solid #d6d6d6",
+    "padding": "2px",
+    "fontWeight": "bold",
+    "vertical-align": "middle",
+    "backgroundColor": "#111111", 
+}
+
+tab_selected_style = {
+    "borderTop": "1px solid #d6d6d6",
+    "borderBottom": "1px solid #d6d6d6",
+    "backgroundColor": "#111111",
+    "color": "yellow",
+    "padding": "5px",
+    "font-size": 18,
+}
+
+app = JupyterDash(external_stylesheets=[dbc.themes.SLATE])
 server=app.server
+svalue="KZ-00"
+rcountry=country[country['ID'] == svalue]
+
+app.title = "Kazakhstan Dashboard"
 app.layout = html.Div([
-    html.Div(children='Hello World')
-])
+  html.Div(className="row", children=[ 
+     html.Div([html.Label(['Выберите группу для анализа:'], style={'color': 'yellow'}),
+        dcc.Dropdown(id='dropdown',
+                     multi=False,
+                     clearable=True,
+                     disabled=False,
+                     style={'display': True},
+                     value='Всего',
+                     options=[{'label': i, 'value': i} for i in GRlist],
+                    )
+
+         ],style={'width':'12%','display':'inline-block','vertical-align':'middle',
+                  'marginLeft':16,'marginRight':0,'marginTop':0,
+                  'marginBottom':0, 'padding': '1px 1px 1px 1px'
+      }), 
+      
+      html.Div([html.Label(['МКБ-10'], style={'color': 'yellow'}),
+        dcc.Dropdown(id='mkb',
+                     multi=False,
+                     clearable=True,
+                     disabled=False,
+                     style={'display': True},
+                     value='All',
+                     options=[{'label': i, 'value': i} for i in mkb_list],
+                    )
+
+         ],style={'width':'12%','display':'inline-block','vertical-align':'middle',
+                  #'background-color':'#FCE22A',
+                  #'margin':'0 auto', 'height':'15px',
+                  'marginLeft':16,'marginRight':0,'marginTop':0,
+                  'marginBottom':0, 'padding': '1px 1px 1px 1px'
+      }),  
+      
+     html.Div(["", 
+             dcc.Input(id='my-input', value='KZ-19', type='text', placeholder='', 
+             style={'display':'inline-block', 'border': '1px solid black', "height": "30px", 
+                    #'background-color': 'black', 'border-color': 'white', 'color': 'yellow', 'width':'150px'})  
+                    'background-color': "#111111", 'border-color': "#111111", 'color': "#111111", 'width':'5px'})  
+       ],style={"background": "#111111", 'width':'5px',"height": "3px", 'marginLeft':19,'marginRight':5}),  
+     ]
+   ), 
+       
+ dcc.Tabs(id="tabs-with-classes", value='Table0', 
+              parent_className='custom-tabs', 
+              className='custom-tabs-container',
+        children=[
+            dcc.Tab(
+                label="Старт",
+                value="Table0",
+                style=tab_style,
+                selected_style=tab_selected_style,
+                className='custom-tab',
+                selected_className='custom-tab--selected'
+            ),
+  
+           dcc.Tab(
+                label="Смертность населения в 2022г",
+                value="Table6",
+                style=tab_style,
+                selected_style=tab_selected_style,
+                className='custom-tab',
+                selected_className='custom-tab--selected'
+            ),
+            
+            dcc.Tab(
+                label="Pаспределение населения по годам",
+                value="Table5",
+                style=tab_style,
+                selected_style=tab_selected_style,
+                className='custom-tab',
+                selected_className='custom-tab--selected'
+            ),
+            
+            dcc.Tab(
+                label="Демография",
+                value="Table1",
+                style=tab_style,
+                selected_style=tab_selected_style,
+                className='custom-tab',
+                selected_className='custom-tab--selected'
+            ),
+            dcc.Tab(
+                label="Популяция",
+                value="Table2",
+                style=tab_style,
+                selected_style=tab_selected_style,
+                className='custom-tab',
+                selected_className='custom-tab--selected'
+            ),
+            dcc.Tab(
+                label="Возрастное распределение по странам",
+                value="Table3",
+                style=tab_style,
+                selected_style=tab_selected_style,
+                className='custom-tab',
+                selected_className='custom-tab--selected'
+            ),
+            dcc.Tab(
+                label="Прогноз заболеваемости",
+                value="Table4",
+                style=tab_style,
+                selected_style=tab_selected_style,
+                className='custom-tab',
+                selected_className='custom-tab--selected'
+            ),
+         ],
+         style=tabs_styles,
+         colors={"border": "yellow", "primary": "red",
+                 "background": "#111111",},
+     ),html.Div(id='tabs-content-classes')
+   ],style={"background": "#111111", 'marginLeft':5,'marginRight':20}
+  ) 
+
+
 
 if __name__ == '__main__':
     app.run(debug=True)
