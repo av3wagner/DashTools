@@ -66,10 +66,10 @@ tod2=mkb[mkb['F1'] != "All"]
 #allpop = pd.read_excel('data/Pilot2022.xlsx', sheet_name='AllPopulation')
 
 app = dash.Dash(__name__)
+server=app.server
 app.layout = html.Div([
     html.Div(children='Hello World')
 ])
-server=app.server
 
 if __name__ == '__main__':
     app.run(debug=True)
