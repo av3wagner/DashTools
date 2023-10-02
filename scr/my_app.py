@@ -68,6 +68,7 @@ tod2=mkb[mkb['F1'] != "All"]
 #app.layout = html.Div([
 #    html.Div(children='Hello World')
 #])
+
 colors = {
     'background': '#4A235A',
     'background2': 'black',
@@ -98,6 +99,163 @@ app = JupyterDash(external_stylesheets=[dbc.themes.SLATE])
 server=app.server
 svalue="KZ-00"
 rcountry=country[country['ID'] == svalue]
+def fig_map(df):
+    #print("fig_map wurde gestartet!")
+    figm = px.choropleth(
+        dfkaz,
+        geojson=polygons,
+        locations="NAME_1",
+        hover_name= "ID", #"NAME_1",
+        featureidkey="properties.NAME_1",
+        color="unemp",
+        color_continuous_scale="Viridis",
+        title="Republic Kazakhstan",
+        template="plotly_dark",
+        range_color=(0, 12),
+        width=1000, height=600,
+     )
+    figm.update_layout(
+            autosize=False,
+            margin = dict(
+                    l=0,
+                    r=0,
+                    b=0,
+                    t=0,
+                    pad=4,
+                    autoexpand=True
+                ),
+          )   
+    figm.update_geos(fitbounds="locations", visible=True)
+    return figm
+
+def FigureTod1(value):
+    #print("FigureStart wurde gestartet!")
+    figure = px.bar(tod1,  x='AGE', y="Count",
+    barmode="group",                 
+    title="Распределение смертности по возрасту и полу",             
+    orientation= 'v',
+    height=605,                     
+    hover_data={'Count': False},
+    text='Count',                    
+    labels=dict(y="Количество", x="Boзраст"), 
+    color="GR",    
+    ).update_layout(
+    font=dict(family="silom",
+               size=18, 
+               color="Yellow"),
+    plot_bgcolor = "#111111",
+    paper_bgcolor= "#111111")
+     
+    figure.update_xaxes(tickangle=45, title_text="Возраст",title_font={"size": 18},
+    title_standoff=5, tickfont=dict(family='silom', color='Yellow', size=14))
+    figure.update_yaxes(title_text="Количество",title_font={"size": 18},title_standoff=5)
+    
+    figure.update_layout(title={
+        'y':0.99,
+        'x':0.5,
+        'xanchor': 'center',
+        'yanchor': 'top'},
+        font=dict(family="silom",size=18,color="Yellow"))
+    return figure  
+
+def FigureTod2(value):
+    print("FigureStart wurde gestartet!")
+    figure = px.bar(tod2,  x='F1', y="SUMM",
+    barmode="group",                 
+    title="Распределение смертности по полу и МКБ-10",             
+    orientation= 'v',
+    height=605,                     
+    hover_data={'SUMM': False},
+    text='SUMM',                    
+    labels=dict(y="Количество", x="Boзраст"), 
+    color="GR",    
+    ).update_layout(
+    font=dict(family="silom",
+               size=18, 
+               color="Yellow"),
+    plot_bgcolor = "#111111",
+    paper_bgcolor= "#111111")
+     
+    figure.update_xaxes(tickangle=45, title_text="Возраст",title_font={"size": 18},
+    title_standoff=5, tickfont=dict(family='silom', color='Yellow', size=14))
+    figure.update_yaxes(title_text="Количество",title_font={"size": 18},title_standoff=5)
+    
+    figure.update_layout(title={
+        'y':0.99,
+        'x':0.5,
+        'xanchor': 'center',
+        'yanchor': 'top'},
+        font=dict(family="silom",size=18,color="Yellow"))
+    return figure 
+
+def FigurePop(value):
+    print("FigurepoРulation wurde gestartet!")
+    figure = px.bar(population,  x='Age', y="Count",
+    barmode="group",    
+    title="Распределение население области по возрасту в 2021-2022гг",             
+    orientation= 'v',
+    height=605,                     
+    hover_data={'Count': False},
+    text='Count',                    
+    labels=dict(y="Количество", x="Boзраст"), 
+    color="Year",    
+    ).update_layout(
+    font=dict(family="silom",
+               size=18, 
+               color="Yellow"),
+    plot_bgcolor = "#111111",
+    paper_bgcolor= "#111111")
+     
+    figure.update_xaxes(tickangle=45, title_text="Возраст",title_font={"size": 18},
+    title_standoff=5, tickfont=dict(family='silom', color='Yellow', size=14))
+    figure.update_yaxes(title_text="Количество",title_font={"size": 18},title_standoff=5)
+    
+    figure.update_layout(title={
+        'y':0.99,
+        'x':0.5,
+        'xanchor': 'center',
+        'yanchor': 'top'},
+        font=dict(family="silom",size=18,color="Yellow"))
+    return figure  
+
+
+def plot_countries(value):
+    dfM = Tsummy[Tsummy['GR'].isin(countries)]
+          
+    return {
+        'data': [go.Bar(x=GR_categories,
+                        y=[0 for i in range(len(GR_categories))],
+                        showlegend=False,
+                        width=0.1,
+                        hoverinfo='none')] +
+                
+                [go.Bar(x=age_categories,
+                        y=dfM.iloc[x, 2:7],
+                        name=dfM.iloc[x, 0],
+                        text=dfM.iloc[x, 2:7].astype(str) + '%',
+                        hoverinfo='name+y',
+                        textposition='inside',
+                        textfont={'color': 'Yellow'})
+                 for x in range(len(dfM))],
+        'layout': go.Layout(title={
+                            'text': 'Возрастное (%) распределение по странам: ' + ', '.join(countries),                
+                            'y':0.99,
+                            'x':0.5,
+                            'xanchor': 'center',
+                            'yanchor': 'top'},
+                            xaxis={}, 
+                            yaxis={}, 
+                            barmode='group',
+                              #color='y',
+                              #color_discrete_sequence=go.colors.sequential.Viridis,
+                            plot_bgcolor="#111111",
+                            paper_bgcolor="#111111",
+                            height=600, 
+                            font=dict(family="silom",
+                                      size=18, color="Yellow")
+                           )
+        
+    }    
 
 app.title = "Kazakhstan Dashboard"
 app.layout = html.Div([
