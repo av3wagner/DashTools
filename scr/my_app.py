@@ -50,9 +50,9 @@ age_df = pd.read_csv('data/country_data_master.csv',
 age_df = age_df.sort_values(['median_age_total'])
 age_categories = ['0-14', '15-24', '25-54', '55-64', '65+']
 
-df_stock= pd.read_sas(f'data/stock_price_FB.sas7bdat', encoding="latin-1")
-df_pred = pd.read_sas(f'data/pred_prophet_FB.sas7bdat', encoding="latin-1")
-FP =pd.read_sas('data/All_prophet_fb.sas7bdat', encoding="latin-1")
+#df_stock= pd.read_sas(f'data/stock_price_FB.sas7bdat', encoding="latin-1")
+#df_pred = pd.read_sas(f'data/pred_prophet_FB.sas7bdat', encoding="latin-1")
+#FP =pd.read_sas('data/All_prophet_fb.sas7bdat', encoding="latin-1")
 #pyperclip.copy("KZ-11")
 
 ################################# Neu-data ################################
