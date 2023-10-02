@@ -1,0 +1,15 @@
+IDNUM,ID,GID_0,NAME_0,GID_1,NAME_1,VARNAME_1,NL_NAME_1,TYPE_1,ENGTYPE_1,CC_1,HASC_1
+0,KZ-19,KAZ,Kazakhstan,KAZ.1_1,Almaty,Alma-Ata|Alma-Atinskaya Oblast'|Almatinskaya Oblast',,Oblasy,Region,,KZ.AA
+1,KZ-11,KAZ,Kazakhstan,KAZ.2_1,Aqmola,Akmolin|Akmolinsk|Tselinograd,,Oblasy,Region,,KZ.AM
+2,KZ-15,KAZ,Kazakhstan,KAZ.3_1,Aqtöbe,Aktyubinsk,,Oblasy,Region,,KZ.AT
+3,KZ-23,KAZ,Kazakhstan,KAZ.4_1,Atyrau,Ateransk|Gur'yev,,Oblasy,Region,,KZ.AR
+4,KZ-63,KAZ,Kazakhstan,KAZ.5_1,East Kazakhstan,Shyghys Qazaqstan|Vostochno-Kazakhstan,,Oblasy,Region,,KZ.EK
+5,KZ-47,KAZ,Kazakhstan,KAZ.6_1,Mangghystau,Mangistau|Mangyshlak,,Oblasy,Region,,KZ.MG
+6,KZ-59,KAZ,Kazakhstan,KAZ.7_1,North Kazakhstan,Severo-Kazakhstan|Soltustik Qazaqstan,,Oblasy,Region,,KZ.NK
+7,KZ-55,KAZ,Kazakhstan,KAZ.8_1,Pavlodar,,,Oblasy,Region,,KZ.PA
+8,KZ-35,KAZ,Kazakhstan,KAZ.9_1,Qaraghandy,Karaganda|Karagandinskaya Oblast',,Oblasy,Region,,KZ.QG
+9,KZ-39,KAZ,Kazakhstan,KAZ.10_1,Qostanay,Kustanai|Kustanay,,Oblasy,Region,,KZ.QS
+10,KZ-43,KAZ,Kazakhstan,KAZ.11_1,Qyzylorda,Kyzyl-Orda|Kzyl-Orda|Kzyl-Ordinskaya Oblast',,Oblasy,Region,,KZ.QO
+11,KZ-51,KAZ,Kazakhstan,KAZ.12_1,South Kazakhstan,Chimkent,,Oblasy,Region,,KZ.SK
+12,KZ-27,KAZ,Kazakhstan,KAZ.13_1,West Kazakhstan,Ural'sk,,Oblasy,Region,,KZ.WK
+13,KZ-31,KAZ,Kazakhstan,KAZ.14_1,Zhambyl,Dzhambul,,Oblasy,Region,,KZ.ZM

@@ -1,0 +1,577 @@
+ID,country,year,pop
+KZ-00,Kazakhstan,1990,16000000
+KZ-00,Kazakhstan,1991,16102775
+KZ-00,Kazakhstan,1992,16205550
+KZ-00,Kazakhstan,1993,16308325
+KZ-00,Kazakhstan,1994,16411099
+KZ-00,Kazakhstan,1995,16513874
+KZ-00,Kazakhstan,1996,16616649
+KZ-00,Kazakhstan,1997,16719423
+KZ-00,Kazakhstan,1998,16822198
+KZ-00,Kazakhstan,1999,16924973
+KZ-00,Kazakhstan,2000,17027747
+KZ-00,Kazakhstan,2001,17130522
+KZ-00,Kazakhstan,2002,17233297
+KZ-00,Kazakhstan,2003,17336071
+KZ-00,Kazakhstan,2004,17438846
+KZ-00,Kazakhstan,2005,17541621
+KZ-00,Kazakhstan,2006,17644395
+KZ-00,Kazakhstan,2007,17747170
+KZ-00,Kazakhstan,2008,17849945
+KZ-00,Kazakhstan,2009,17952719
+KZ-00,Kazakhstan,2010,18055494
+KZ-00,Kazakhstan,2011,18158269
+KZ-00,Kazakhstan,2012,18261043
+KZ-00,Kazakhstan,2013,18363818
+KZ-00,Kazakhstan,2014,18466593
+KZ-00,Kazakhstan,2015,18569367
+KZ-00,Kazakhstan,2016,18672142
+KZ-00,Kazakhstan,2017,18774917
+KZ-00,Kazakhstan,2018,18877691
+KZ-00,Kazakhstan,2019,18980466
+KZ-00,Kazakhstan,2020,19083241
+KZ-00,Kazakhstan,2021,19186015
+KZ-11,Aqmola,1990,652972
+KZ-11,Aqmola,1991,657166
+KZ-11,Aqmola,1992,661361
+KZ-11,Aqmola,1993,665555
+KZ-11,Aqmola,1994,669749
+KZ-11,Aqmola,1995,673943
+KZ-11,Aqmola,1996,678138
+KZ-11,Aqmola,1997,682332
+KZ-11,Aqmola,1998,686526
+KZ-11,Aqmola,1999,690721
+KZ-11,Aqmola,2000,694915
+KZ-11,Aqmola,2001,699109
+KZ-11,Aqmola,2002,703304
+KZ-11,Aqmola,2003,707498
+KZ-11,Aqmola,2004,711692
+KZ-11,Aqmola,2005,715887
+KZ-11,Aqmola,2006,720081
+KZ-11,Aqmola,2007,724275
+KZ-11,Aqmola,2008,728469
+KZ-11,Aqmola,2009,732664
+KZ-11,Aqmola,2010,736858
+KZ-11,Aqmola,2011,741052
+KZ-11,Aqmola,2012,745247
+KZ-11,Aqmola,2013,749441
+KZ-11,Aqmola,2014,753635
+KZ-11,Aqmola,2015,757830
+KZ-11,Aqmola,2016,762024
+KZ-11,Aqmola,2017,766218
+KZ-11,Aqmola,2018,770413
+KZ-11,Aqmola,2019,774607
+KZ-11,Aqmola,2020,778801
+KZ-11,Aqmola,2021,782995
+KZ-15,Aqtöbe,1990,755734
+KZ-15,Aqtöbe,1991,760589
+KZ-15,Aqtöbe,1992,765443
+KZ-15,Aqtöbe,1993,770297
+KZ-15,Aqtöbe,1994,775152
+KZ-15,Aqtöbe,1995,780006
+KZ-15,Aqtöbe,1996,784861
+KZ-15,Aqtöbe,1997,789715
+KZ-15,Aqtöbe,1998,794569
+KZ-15,Aqtöbe,1999,799424
+KZ-15,Aqtöbe,2000,804278
+KZ-15,Aqtöbe,2001,809133
+KZ-15,Aqtöbe,2002,813987
+KZ-15,Aqtöbe,2003,818841
+KZ-15,Aqtöbe,2004,823696
+KZ-15,Aqtöbe,2005,828550
+KZ-15,Aqtöbe,2006,833405
+KZ-15,Aqtöbe,2007,838259
+KZ-15,Aqtöbe,2008,843113
+KZ-15,Aqtöbe,2009,847968
+KZ-15,Aqtöbe,2010,852822
+KZ-15,Aqtöbe,2011,857677
+KZ-15,Aqtöbe,2012,862531
+KZ-15,Aqtöbe,2013,867385
+KZ-15,Aqtöbe,2014,872240
+KZ-15,Aqtöbe,2015,877094
+KZ-15,Aqtöbe,2016,881949
+KZ-15,Aqtöbe,2017,886803
+KZ-15,Aqtöbe,2018,891657
+KZ-15,Aqtöbe,2019,896512
+KZ-15,Aqtöbe,2020,901366
+KZ-15,Aqtöbe,2021,906220
+KZ-19,Almaty,1990,1790118
+KZ-19,Almaty,1991,1801616
+KZ-19,Almaty,1992,1813115
+KZ-19,Almaty,1993,1824614
+KZ-19,Almaty,1994,1836112
+KZ-19,Almaty,1995,1847611
+KZ-19,Almaty,1996,1859110
+KZ-19,Almaty,1997,1870608
+KZ-19,Almaty,1998,1882107
+KZ-19,Almaty,1999,1893606
+KZ-19,Almaty,2000,1905104
+KZ-19,Almaty,2001,1916603
+KZ-19,Almaty,2002,1928102
+KZ-19,Almaty,2003,1939600
+KZ-19,Almaty,2004,1951099
+KZ-19,Almaty,2005,1962598
+KZ-19,Almaty,2006,1974096
+KZ-19,Almaty,2007,1985595
+KZ-19,Almaty,2008,1997094
+KZ-19,Almaty,2009,2008592
+KZ-19,Almaty,2010,2020091
+KZ-19,Almaty,2011,2031590
+KZ-19,Almaty,2012,2043088
+KZ-19,Almaty,2013,2054587
+KZ-19,Almaty,2014,2066086
+KZ-19,Almaty,2015,2077584
+KZ-19,Almaty,2016,2089083
+KZ-19,Almaty,2017,2100582
+KZ-19,Almaty,2018,2112080
+KZ-19,Almaty,2019,2123579
+KZ-19,Almaty,2020,2135078
+KZ-19,Almaty,2021,2146576
+KZ-23,Atyrau,1990,561744
+KZ-23,Atyrau,1991,565352
+KZ-23,Atyrau,1992,568960
+KZ-23,Atyrau,1993,572569
+KZ-23,Atyrau,1994,576177
+KZ-23,Atyrau,1995,579785
+KZ-23,Atyrau,1996,583394
+KZ-23,Atyrau,1997,587002
+KZ-23,Atyrau,1998,590610
+KZ-23,Atyrau,1999,594219
+KZ-23,Atyrau,2000,597827
+KZ-23,Atyrau,2001,601435
+KZ-23,Atyrau,2002,605044
+KZ-23,Atyrau,2003,608652
+KZ-23,Atyrau,2004,612260
+KZ-23,Atyrau,2005,615869
+KZ-23,Atyrau,2006,619477
+KZ-23,Atyrau,2007,623085
+KZ-23,Atyrau,2008,626693
+KZ-23,Atyrau,2009,630302
+KZ-23,Atyrau,2010,633910
+KZ-23,Atyrau,2011,637518
+KZ-23,Atyrau,2012,641127
+KZ-23,Atyrau,2013,644735
+KZ-23,Atyrau,2014,648343
+KZ-23,Atyrau,2015,651952
+KZ-23,Atyrau,2016,655560
+KZ-23,Atyrau,2017,659168
+KZ-23,Atyrau,2018,662777
+KZ-23,Atyrau,2019,666385
+KZ-23,Atyrau,2020,669993
+KZ-23,Atyrau,2021,673601
+KZ-63,East Kazakhstan,1990,1118559
+KZ-63,East Kazakhstan,1991,1125744
+KZ-63,East Kazakhstan,1992,1132929
+KZ-63,East Kazakhstan,1993,1140113
+KZ-63,East Kazakhstan,1994,1147298
+KZ-63,East Kazakhstan,1995,1154483
+KZ-63,East Kazakhstan,1996,1161668
+KZ-63,East Kazakhstan,1997,1168853
+KZ-63,East Kazakhstan,1998,1176038
+KZ-63,East Kazakhstan,1999,1183223
+KZ-63,East Kazakhstan,2000,1190408
+KZ-63,East Kazakhstan,2001,1197593
+KZ-63,East Kazakhstan,2002,1204778
+KZ-63,East Kazakhstan,2003,1211963
+KZ-63,East Kazakhstan,2004,1219148
+KZ-63,East Kazakhstan,2005,1226333
+KZ-63,East Kazakhstan,2006,1233518
+KZ-63,East Kazakhstan,2007,1240703
+KZ-63,East Kazakhstan,2008,1247888
+KZ-63,East Kazakhstan,2009,1255073
+KZ-63,East Kazakhstan,2010,1262258
+KZ-63,East Kazakhstan,2011,1269443
+KZ-63,East Kazakhstan,2012,1276628
+KZ-63,East Kazakhstan,2013,1283813
+KZ-63,East Kazakhstan,2014,1290998
+KZ-63,East Kazakhstan,2015,1298183
+KZ-63,East Kazakhstan,2016,1305368
+KZ-63,East Kazakhstan,2017,1312553
+KZ-63,East Kazakhstan,2018,1319738
+KZ-63,East Kazakhstan,2019,1326923
+KZ-63,East Kazakhstan,2020,1334108
+KZ-63,East Kazakhstan,2021,1341292
+KZ-31,Zhambyl,1990,1000111
+KZ-31,Zhambyl,1991,1006536
+KZ-31,Zhambyl,1992,1012960
+KZ-31,Zhambyl,1993,1019384
+KZ-31,Zhambyl,1994,1025808
+KZ-31,Zhambyl,1995,1032232
+KZ-31,Zhambyl,1996,1038656
+KZ-31,Zhambyl,1997,1045080
+KZ-31,Zhambyl,1998,1051505
+KZ-31,Zhambyl,1999,1057929
+KZ-31,Zhambyl,2000,1064353
+KZ-31,Zhambyl,2001,1070777
+KZ-31,Zhambyl,2002,1077201
+KZ-31,Zhambyl,2003,1083625
+KZ-31,Zhambyl,2004,1090049
+KZ-31,Zhambyl,2005,1096473
+KZ-31,Zhambyl,2006,1102898
+KZ-31,Zhambyl,2007,1109322
+KZ-31,Zhambyl,2008,1115746
+KZ-31,Zhambyl,2009,1122170
+KZ-31,Zhambyl,2010,1128594
+KZ-31,Zhambyl,2011,1135018
+KZ-31,Zhambyl,2012,1141442
+KZ-31,Zhambyl,2013,1147866
+KZ-31,Zhambyl,2014,1154291
+KZ-31,Zhambyl,2015,1160715
+KZ-31,Zhambyl,2016,1167139
+KZ-31,Zhambyl,2017,1173563
+KZ-31,Zhambyl,2018,1179987
+KZ-31,Zhambyl,2019,1186411
+KZ-31,Zhambyl,2020,1192835
+KZ-31,Zhambyl,2021,1199259
+KZ-27,West Kazakhstan,1990,563457
+KZ-27,West Kazakhstan,1991,567076
+KZ-27,West Kazakhstan,1992,570695
+KZ-27,West Kazakhstan,1993,574315
+KZ-27,West Kazakhstan,1994,577934
+KZ-27,West Kazakhstan,1995,581553
+KZ-27,West Kazakhstan,1996,585173
+KZ-27,West Kazakhstan,1997,588792
+KZ-27,West Kazakhstan,1998,592411
+KZ-27,West Kazakhstan,1999,596031
+KZ-27,West Kazakhstan,2000,599650
+KZ-27,West Kazakhstan,2001,603269
+KZ-27,West Kazakhstan,2002,606889
+KZ-27,West Kazakhstan,2003,610508
+KZ-27,West Kazakhstan,2004,614127
+KZ-27,West Kazakhstan,2005,617746
+KZ-27,West Kazakhstan,2006,621366
+KZ-27,West Kazakhstan,2007,624985
+KZ-27,West Kazakhstan,2008,628604
+KZ-27,West Kazakhstan,2009,632224
+KZ-27,West Kazakhstan,2010,635843
+KZ-27,West Kazakhstan,2011,639462
+KZ-27,West Kazakhstan,2012,643082
+KZ-27,West Kazakhstan,2013,646701
+KZ-27,West Kazakhstan,2014,650320
+KZ-27,West Kazakhstan,2015,653940
+KZ-27,West Kazakhstan,2016,657559
+KZ-27,West Kazakhstan,2017,661178
+KZ-27,West Kazakhstan,2018,664798
+KZ-27,West Kazakhstan,2019,668417
+KZ-27,West Kazakhstan,2020,672036
+KZ-27,West Kazakhstan,2021,675655
+KZ-35,Qaraghandy,1990,1124543
+KZ-35,Qaraghandy,1991,1131766
+KZ-35,Qaraghandy,1992,1138990
+KZ-35,Qaraghandy,1993,1146213
+KZ-35,Qaraghandy,1994,1153437
+KZ-35,Qaraghandy,1995,1160660
+KZ-35,Qaraghandy,1996,1167883
+KZ-35,Qaraghandy,1997,1175107
+KZ-35,Qaraghandy,1998,1182330
+KZ-35,Qaraghandy,1999,1189554
+KZ-35,Qaraghandy,2000,1196777
+KZ-35,Qaraghandy,2001,1204000
+KZ-35,Qaraghandy,2002,1211224
+KZ-35,Qaraghandy,2003,1218447
+KZ-35,Qaraghandy,2004,1225671
+KZ-35,Qaraghandy,2005,1232894
+KZ-35,Qaraghandy,2006,1240117
+KZ-35,Qaraghandy,2007,1247341
+KZ-35,Qaraghandy,2008,1254564
+KZ-35,Qaraghandy,2009,1261788
+KZ-35,Qaraghandy,2010,1269011
+KZ-35,Qaraghandy,2011,1276234
+KZ-35,Qaraghandy,2012,1283458
+KZ-35,Qaraghandy,2013,1290681
+KZ-35,Qaraghandy,2014,1297905
+KZ-35,Qaraghandy,2015,1305128
+KZ-35,Qaraghandy,2016,1312351
+KZ-35,Qaraghandy,2017,1319575
+KZ-35,Qaraghandy,2018,1326798
+KZ-35,Qaraghandy,2019,1334022
+KZ-35,Qaraghandy,2020,1341245
+KZ-35,Qaraghandy,2021,1348468
+KZ-39,Qostanay,1990,695209
+KZ-39,Qostanay,1991,699675
+KZ-39,Qostanay,1992,704141
+KZ-39,Qostanay,1993,708606
+KZ-39,Qostanay,1994,713072
+KZ-39,Qostanay,1995,717537
+KZ-39,Qostanay,1996,722003
+KZ-39,Qostanay,1997,726469
+KZ-39,Qostanay,1998,730934
+KZ-39,Qostanay,1999,735400
+KZ-39,Qostanay,2000,739866
+KZ-39,Qostanay,2001,744331
+KZ-39,Qostanay,2002,748797
+KZ-39,Qostanay,2003,753262
+KZ-39,Qostanay,2004,757728
+KZ-39,Qostanay,2005,762194
+KZ-39,Qostanay,2006,766659
+KZ-39,Qostanay,2007,771125
+KZ-39,Qostanay,2008,775590
+KZ-39,Qostanay,2009,780056
+KZ-39,Qostanay,2010,784522
+KZ-39,Qostanay,2011,788987
+KZ-39,Qostanay,2012,793453
+KZ-39,Qostanay,2013,797919
+KZ-39,Qostanay,2014,802384
+KZ-39,Qostanay,2015,806850
+KZ-39,Qostanay,2016,811315
+KZ-39,Qostanay,2017,815781
+KZ-39,Qostanay,2018,820247
+KZ-39,Qostanay,2019,824712
+KZ-39,Qostanay,2020,829178
+KZ-39,Qostanay,2021,833643
+KZ-43,Qyzylorda,1990,679605
+KZ-43,Qyzylorda,1991,683970
+KZ-43,Qyzylorda,1992,688335
+KZ-43,Qyzylorda,1993,692701
+KZ-43,Qyzylorda,1994,697066
+KZ-43,Qyzylorda,1995,701432
+KZ-43,Qyzylorda,1996,705797
+KZ-43,Qyzylorda,1997,710162
+KZ-43,Qyzylorda,1998,714528
+KZ-43,Qyzylorda,1999,718893
+KZ-43,Qyzylorda,2000,723258
+KZ-43,Qyzylorda,2001,727624
+KZ-43,Qyzylorda,2002,731989
+KZ-43,Qyzylorda,2003,736355
+KZ-43,Qyzylorda,2004,740720
+KZ-43,Qyzylorda,2005,745085
+KZ-43,Qyzylorda,2006,749451
+KZ-43,Qyzylorda,2007,753816
+KZ-43,Qyzylorda,2008,758182
+KZ-43,Qyzylorda,2009,762547
+KZ-43,Qyzylorda,2010,766912
+KZ-43,Qyzylorda,2011,771278
+KZ-43,Qyzylorda,2012,775643
+KZ-43,Qyzylorda,2013,780008
+KZ-43,Qyzylorda,2014,784374
+KZ-43,Qyzylorda,2015,788739
+KZ-43,Qyzylorda,2016,793105
+KZ-43,Qyzylorda,2017,797470
+KZ-43,Qyzylorda,2018,801835
+KZ-43,Qyzylorda,2019,806201
+KZ-43,Qyzylorda,2020,810566
+KZ-43,Qyzylorda,2021,814931
+KZ-47,Mangghystau,1990,612954
+KZ-47,Mangghystau,1991,616891
+KZ-47,Mangghystau,1992,620828
+KZ-47,Mangghystau,1993,624765
+KZ-47,Mangghystau,1994,628703
+KZ-47,Mangghystau,1995,632640
+KZ-47,Mangghystau,1996,636577
+KZ-47,Mangghystau,1997,640514
+KZ-47,Mangghystau,1998,644452
+KZ-47,Mangghystau,1999,648389
+KZ-47,Mangghystau,2000,652326
+KZ-47,Mangghystau,2001,656263
+KZ-47,Mangghystau,2002,660201
+KZ-47,Mangghystau,2003,664138
+KZ-47,Mangghystau,2004,668075
+KZ-47,Mangghystau,2005,672012
+KZ-47,Mangghystau,2006,675950
+KZ-47,Mangghystau,2007,679887
+KZ-47,Mangghystau,2008,683824
+KZ-47,Mangghystau,2009,687761
+KZ-47,Mangghystau,2010,691699
+KZ-47,Mangghystau,2011,695636
+KZ-47,Mangghystau,2012,699573
+KZ-47,Mangghystau,2013,703510
+KZ-47,Mangghystau,2014,707448
+KZ-47,Mangghystau,2015,711385
+KZ-47,Mangghystau,2016,715322
+KZ-47,Mangghystau,2017,719259
+KZ-47,Mangghystau,2018,723197
+KZ-47,Mangghystau,2019,727134
+KZ-47,Mangghystau,2020,731071
+KZ-47,Mangghystau,2021,735008
+KZ-55,Pavlodar,1990,631089
+KZ-55,Pavlodar,1991,635143
+KZ-55,Pavlodar,1992,639197
+KZ-55,Pavlodar,1993,643251
+KZ-55,Pavlodar,1994,647304
+KZ-55,Pavlodar,1995,651358
+KZ-55,Pavlodar,1996,655412
+KZ-55,Pavlodar,1997,659466
+KZ-55,Pavlodar,1998,663519
+KZ-55,Pavlodar,1999,667573
+KZ-55,Pavlodar,2000,671627
+KZ-55,Pavlodar,2001,675681
+KZ-55,Pavlodar,2002,679734
+KZ-55,Pavlodar,2003,683788
+KZ-55,Pavlodar,2004,687842
+KZ-55,Pavlodar,2005,691896
+KZ-55,Pavlodar,2006,695949
+KZ-55,Pavlodar,2007,700003
+KZ-55,Pavlodar,2008,704057
+KZ-55,Pavlodar,2009,708111
+KZ-55,Pavlodar,2010,712164
+KZ-55,Pavlodar,2011,716218
+KZ-55,Pavlodar,2012,720272
+KZ-55,Pavlodar,2013,724326
+KZ-55,Pavlodar,2014,728379
+KZ-55,Pavlodar,2015,732433
+KZ-55,Pavlodar,2016,736487
+KZ-55,Pavlodar,2017,740541
+KZ-55,Pavlodar,2018,744594
+KZ-55,Pavlodar,2019,748648
+KZ-55,Pavlodar,2020,752702
+KZ-55,Pavlodar,2021,756755
+KZ-59,North Kazakhstan,1990,450984
+KZ-59,North Kazakhstan,1991,453881
+KZ-59,North Kazakhstan,1992,456778
+KZ-59,North Kazakhstan,1993,459675
+KZ-59,North Kazakhstan,1994,462571
+KZ-59,North Kazakhstan,1995,465468
+KZ-59,North Kazakhstan,1996,468365
+KZ-59,North Kazakhstan,1997,471262
+KZ-59,North Kazakhstan,1998,474159
+KZ-59,North Kazakhstan,1999,477056
+KZ-59,North Kazakhstan,2000,479953
+KZ-59,North Kazakhstan,2001,482849
+KZ-59,North Kazakhstan,2002,485746
+KZ-59,North Kazakhstan,2003,488643
+KZ-59,North Kazakhstan,2004,491540
+KZ-59,North Kazakhstan,2005,494437
+KZ-59,North Kazakhstan,2006,497334
+KZ-59,North Kazakhstan,2007,500231
+KZ-59,North Kazakhstan,2008,503127
+KZ-59,North Kazakhstan,2009,506024
+KZ-59,North Kazakhstan,2010,508921
+KZ-59,North Kazakhstan,2011,511818
+KZ-59,North Kazakhstan,2012,514715
+KZ-59,North Kazakhstan,2013,517612
+KZ-59,North Kazakhstan,2014,520509
+KZ-59,North Kazakhstan,2015,523405
+KZ-59,North Kazakhstan,2016,526302
+KZ-59,North Kazakhstan,2017,529199
+KZ-59,North Kazakhstan,2018,532096
+KZ-59,North Kazakhstan,2019,534993
+KZ-59,North Kazakhstan,2020,537890
+KZ-59,North Kazakhstan,2021,540786
+KZ-51,South Kazakhstan,1990,1712932
+KZ-51,South Kazakhstan,1991,1723935
+KZ-51,South Kazakhstan,1992,1734938
+KZ-51,South Kazakhstan,1993,1745941
+KZ-51,South Kazakhstan,1994,1756944
+KZ-51,South Kazakhstan,1995,1767947
+KZ-51,South Kazakhstan,1996,1778950
+KZ-51,South Kazakhstan,1997,1789952
+KZ-51,South Kazakhstan,1998,1800955
+KZ-51,South Kazakhstan,1999,1811958
+KZ-51,South Kazakhstan,2000,1822961
+KZ-51,South Kazakhstan,2001,1833964
+KZ-51,South Kazakhstan,2002,1844967
+KZ-51,South Kazakhstan,2003,1855970
+KZ-51,South Kazakhstan,2004,1866973
+KZ-51,South Kazakhstan,2005,1877975
+KZ-51,South Kazakhstan,2006,1888978
+KZ-51,South Kazakhstan,2007,1899981
+KZ-51,South Kazakhstan,2008,1910984
+KZ-51,South Kazakhstan,2009,1921987
+KZ-51,South Kazakhstan,2010,1932990
+KZ-51,South Kazakhstan,2011,1943993
+KZ-51,South Kazakhstan,2012,1954996
+KZ-51,South Kazakhstan,2013,1965998
+KZ-51,South Kazakhstan,2014,1977001
+KZ-51,South Kazakhstan,2015,1988004
+KZ-51,South Kazakhstan,2016,1999007
+KZ-51,South Kazakhstan,2017,2010010
+KZ-51,South Kazakhstan,2018,2021013
+KZ-51,South Kazakhstan,2019,2032016
+KZ-51,South Kazakhstan,2020,2043019
+KZ-51,South Kazakhstan,2021,2054021
+KZ-01,город Нур-Султан,1990,1029118
+KZ-01,город Нур-Султан,1991,1035729
+KZ-01,город Нур-Султан,1992,1042339
+KZ-01,город Нур-Султан,1993,1048950
+KZ-01,город Нур-Султан,1994,1055560
+KZ-01,город Нур-Султан,1995,1062171
+KZ-01,город Нур-Султан,1996,1068781
+KZ-01,город Нур-Султан,1997,1075392
+KZ-01,город Нур-Султан,1998,1082002
+KZ-01,город Нур-Султан,1999,1088613
+KZ-01,город Нур-Султан,2000,1095223
+KZ-01,город Нур-Султан,2001,1101833
+KZ-01,город Нур-Султан,2002,1108444
+KZ-01,город Нур-Султан,2003,1115054
+KZ-01,город Нур-Султан,2004,1121665
+KZ-01,город Нур-Султан,2005,1128275
+KZ-01,город Нур-Султан,2006,1134886
+KZ-01,город Нур-Султан,2007,1141496
+KZ-01,город Нур-Султан,2008,1148107
+KZ-01,город Нур-Султан,2009,1154717
+KZ-01,город Нур-Султан,2010,1161328
+KZ-01,город Нур-Султан,2011,1167938
+KZ-01,город Нур-Султан,2012,1174548
+KZ-01,город Нур-Султан,2013,1181159
+KZ-01,город Нур-Султан,2014,1187769
+KZ-01,город Нур-Султан,2015,1194380
+KZ-01,город Нур-Султан,2016,1200990
+KZ-01,город Нур-Султан,2017,1207601
+KZ-01,город Нур-Султан,2018,1214211
+KZ-01,город Нур-Султан,2019,1220822
+KZ-01,город Нур-Султан,2020,1227432
+KZ-01,город Нур-Султан,2021,1234042
+KZ-02,город Алма-Ата,1990,1693138
+KZ-02,город Алма-Ата,1991,1704014
+KZ-02,город Алма-Ата,1992,1714889
+KZ-02,город Алма-Ата,1993,1725765
+KZ-02,город Алма-Ата,1994,1736641
+KZ-02,город Алма-Ата,1995,1747517
+KZ-02,город Алма-Ата,1996,1758392
+KZ-02,город Алма-Ата,1997,1769268
+KZ-02,город Алма-Ата,1998,1780144
+KZ-02,город Алма-Ата,1999,1791019
+KZ-02,город Алма-Ата,2000,1801895
+KZ-02,город Алма-Ата,2001,1812771
+KZ-02,город Алма-Ата,2002,1823647
+KZ-02,город Алма-Ата,2003,1834522
+KZ-02,город Алма-Ата,2004,1845398
+KZ-02,город Алма-Ата,2005,1856274
+KZ-02,город Алма-Ата,2006,1867150
+KZ-02,город Алма-Ата,2007,1878025
+KZ-02,город Алма-Ата,2008,1888901
+KZ-02,город Алма-Ата,2009,1899777
+KZ-02,город Алма-Ата,2010,1910652
+KZ-02,город Алма-Ата,2011,1921528
+KZ-02,город Алма-Ата,2012,1932404
+KZ-02,город Алма-Ата,2013,1943280
+KZ-02,город Алма-Ата,2014,1954155
+KZ-02,город Алма-Ата,2015,1965031
+KZ-02,город Алма-Ата,2016,1975907
+KZ-02,город Алма-Ата,2017,1986783
+KZ-02,город Алма-Ата,2018,1997658
+KZ-02,город Алма-Ата,2019,2008534
+KZ-02,город Алма-Ата,2020,2019410
+KZ-02,город Алма-Ата,2021,2030285
+KZ-03,город Шымкент,1990,927741
+KZ-03,город Шымкент,1991,933701
+KZ-03,город Шымкент,1992,939660
+KZ-03,город Шымкент,1993,945619
+KZ-03,город Шымкент,1994,951578
+KZ-03,город Шымкент,1995,957538
+KZ-03,город Шымкент,1996,963497
+KZ-03,город Шымкент,1997,969456
+KZ-03,город Шымкент,1998,975415
+KZ-03,город Шымкент,1999,981375
+KZ-03,город Шымкент,2000,987334
+KZ-03,город Шымкент,2001,993293
+KZ-03,город Шымкент,2002,999252
+KZ-03,город Шымкент,2003,1005212
+KZ-03,город Шымкент,2004,1011171
+KZ-03,город Шымкент,2005,1017130
+KZ-03,город Шымкент,2006,1023090
+KZ-03,город Шымкент,2007,1029049
+KZ-03,город Шымкент,2008,1035008
+KZ-03,город Шымкент,2009,1040967
+KZ-03,город Шымкент,2010,1046927
+KZ-03,город Шымкент,2011,1052886
+KZ-03,город Шымкент,2012,1058845
+KZ-03,город Шымкент,2013,1064804
+KZ-03,город Шымкент,2014,1070764
+KZ-03,город Шымкент,2015,1076723
+KZ-03,город Шымкент,2016,1082682
+KZ-03,город Шымкент,2017,1088641
+KZ-03,город Шымкент,2018,1094601
+KZ-03,город Шымкент,2019,1100560
+KZ-03,город Шымкент,2020,1106519
+KZ-03,город Шымкент,2021,1112478
