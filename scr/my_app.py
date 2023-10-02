@@ -3,35 +3,32 @@ import pandas as pd
 import numpy as np
 import sqlite3
 import dash
-from dash import dash_table
-from dash import dcc
-from dash import html
-import dash_bootstrap_components as dbc
-from dash.dependencies import Input, Output
-from dash import Dash, dcc, html, Input, Output, State, callback
-import plotly.express as px
-import plotly.graph_objects as go
-import chart_studio.plotly as py 
-from jupyter_dash import JupyterDash
+#from dash import dash_table
+#from dash import dcc
+#from dash import html
+#import dash_bootstrap_components as dbc
+#from dash.dependencies import Input, Output
+#from dash import Dash, dcc, html, Input, Output, State, callback
+#import plotly.express as px
+#import plotly.graph_objects as go
+#import chart_studio.plotly as py 
+#from jupyter_dash import JupyterDash
 import flask
 import json
 import requests
 from urllib.request import urlopen
-from prophet import Prophet
-from pandas_datareader import data, wb
+#from prophet import Prophet
+#from pandas_datareader import data, wb
 
 ################################## Alt-data ###############################
-cnx = sqlite3.connect('data/KZAPP.db')
-df=pd.read_sql_query("Select ID1, ID, IDNAME, POP, MKN, FKN FROM KZ_ALL where AGEN=1", cnx) 
-pop=pd.read_sql_query("Select ID, MKN, FKN FROM KZ_POP ORDER BY AGEN DESC", cnx) 
-
+#cnx = sqlite3.connect('data/KZAPP.db')
+#df=pd.read_sql_query("Select ID1, ID, IDNAME, POP, MKN, FKN FROM KZ_ALL where AGEN=1", cnx) 
+#pop=pd.read_sql_query("Select ID, MKN, FKN FROM KZ_POP ORDER BY AGEN DESC", cnx) 
 my_list=['< 5 лет','5 - 9 лет','10 - 14 лет','15 - 19 лет','20 - 24 лет','25 - 29 лет','30 - 34 лет','35 - 39 лет',
 '40 - 44 лет','45 - 49 лет','50 - 54 лет','55 - 59 лет','60 - 64 лет','65 - 69 лет','70 - 74 лет','75 - 79 лет',
 '80 - 84 лет','85+ лет']
-
 map_obj = map(str.upper, my_list)
 y = list(map_obj)
-
 age_df = pd.read_csv('data/country_data_master.csv', 
                      usecols=lambda cols: 'perc' in cols or cols == 'country' or cols == 'median_age_total')
 age_df = age_df.sort_values(['median_age_total'])
@@ -46,9 +43,9 @@ country = pd.read_csv('data/country.csv')
 dfkaz = pd.read_csv('data/gadm36_KAZ_2.csv')
 dfkaz["unemp"]= np.random.uniform(10.4, dfkaz["IDNUM"])
 districts = dfkaz.NAME_1.values
-polygons = requests.get(
-   'https://raw.githubusercontent.com/open-data-kazakhstan/geo-boundaries-kz/master/data/geojson/kz_1.json'
-).json()
+#polygons = requests.get(
+#   'https://raw.githubusercontent.com/open-data-kazakhstan/geo-boundaries-kz/master/data/geojson/kz_1.json'
+#).json()
 Tod_summy = pd.read_csv('data/tod_summy.csv')
 tod2022 = pd.read_csv('data/tod2022.csv')
 GRlist = ['Всего', 'Мужчины', 'Женщины']
@@ -64,9 +61,9 @@ mkb_list = ['All',  'C33-C34', 'C50', 'E10-E14',
  'K73, K74.0-K74.2, K74.6']
 mkb=tod_summy[tod_summy['GR'] != "Всего"]
 tod2=mkb[mkb['F1'] != "All"]
-excel_data_df = pd.read_excel('data/Pilot2022.xlsx', sheet_name='Population')
-population=excel_data_df[excel_data_df['Age']!='All']
-allpop = pd.read_excel('data/Pilot2022.xlsx', sheet_name='AllPopulation')
-#DesktopWidth: 1920 DesktopHeight: 1080
+#excel_data_df = pd.read_excel('data/Pilot2022.xlsx', sheet_name='Population')
+#population=excel_data_df[excel_data_df['Age']!='All']
+#allpop = pd.read_excel('data/Pilot2022.xlsx', sheet_name='AllPopulation')
+
 if __name__ == '__main__':
     app.run_server(debug=False)
