@@ -23,6 +23,7 @@ from pandas_datareader import data, wb
 ################################## Alt-data ###############################
 cnx = sqlite3.connect('data/KZAPP.db')
 df=pd.read_sql_query("Select ID1, ID, IDNAME, POP, MKN, FKN FROM KZ_ALL where AGEN=1", cnx) 
+print(df)
 pop=pd.read_sql_query("Select ID, MKN, FKN FROM KZ_POP ORDER BY AGEN DESC", cnx) 
 my_list=['< 5 лет','5 - 9 лет','10 - 14 лет','15 - 19 лет','20 - 24 лет','25 - 29 лет','30 - 34 лет','35 - 39 лет',
 '40 - 44 лет','45 - 49 лет','50 - 54 лет','55 - 59 лет','60 - 64 лет','65 - 69 лет','70 - 74 лет','75 - 79 лет',
@@ -34,11 +35,6 @@ age_df = pd.read_csv('data/country_data_master.csv',
 age_df = age_df.sort_values(['median_age_total'])
 age_categories = ['0-14', '15-24', '25-54', '55-64', '65+']
 
-#df_stock= pd.read_sas(f'data/stock_price_FB.sas7bdat', encoding="latin-1")
-#df_pred = pd.read_sas(f'data/pred_prophet_FB.sas7bdat', encoding="latin-1")
-#FP =pd.read_sas('data/All_prophet_fb.sas7bdat', encoding="latin-1")
-#pyperclip.copy("KZ-11")
-################################# Neu-data ################################
 country = pd.read_csv('data/country.csv')
 dfkaz = pd.read_csv('data/gadm36_KAZ_2.csv')
 dfkaz["unemp"]= np.random.uniform(10.4, dfkaz["IDNUM"])
@@ -65,9 +61,10 @@ tod2=mkb[mkb['F1'] != "All"]
 #excel_data_df = pd.read_excel('data/Pilot2022.xlsx', sheet_name='Population')
 #population=excel_data_df[excel_data_df['Age']!='All']
 #allpop = pd.read_excel('data/Pilot2022.xlsx', sheet_name='AllPopulation')
-#app.layout = html.Div([
-#    html.Div(children='Hello World')
-#])
+#df_stock= pd.read_sas(f'data/stock_price_FB.sas7bdat', encoding="latin-1")
+#df_pred = pd.read_sas(f'data/pred_prophet_FB.sas7bdat', encoding="latin-1")
+#FP =pd.read_sas('data/All_prophet_fb.sas7bdat', encoding="latin-1")
+#pyperclip.copy("KZ-11")
 
 colors = {
     'background': '#4A235A',
@@ -99,8 +96,8 @@ app = JupyterDash(external_stylesheets=[dbc.themes.SLATE])
 server=app.server
 svalue="KZ-00"
 rcountry=country[country['ID'] == svalue]
+
 def fig_map(df):
-    #print("fig_map wurde gestartet!")
     figm = px.choropleth(
         dfkaz,
         geojson=polygons,
@@ -129,7 +126,6 @@ def fig_map(df):
     return figm
 
 def FigureTod1(value):
-    #print("FigureStart wurde gestartet!")
     figure = px.bar(tod1,  x='AGE', y="Count",
     barmode="group",                 
     title="Распределение смертности по возрасту и полу",             
@@ -187,7 +183,8 @@ def FigureTod2(value):
         'yanchor': 'top'},
         font=dict(family="silom",size=18,color="Yellow"))
     return figure 
-
+  
+'''
 def FigurePop(value):
     print("FigurepoРulation wurde gestartet!")
     figure = px.bar(population,  x='Age', y="Count",
@@ -217,11 +214,10 @@ def FigurePop(value):
         'yanchor': 'top'},
         font=dict(family="silom",size=18,color="Yellow"))
     return figure  
-
+'''
 
 def plot_countries(value):
     dfM = Tsummy[Tsummy['GR'].isin(countries)]
-          
     return {
         'data': [go.Bar(x=GR_categories,
                         y=[0 for i in range(len(GR_categories))],
@@ -376,9 +372,6 @@ app.layout = html.Div([
 
 def render_content(value): 
     tab=value
-    print(tab)
-    print(svalue)
-    
     if tab == 'Table0':
         return [html.Div(
             children=[
@@ -532,18 +525,16 @@ def render_content(value):
                          'marginBottom':0, 'padding': '5px 0px 0px 0px'},
                 ),
             
-             html.Div(className="six  columns",  
-                    children=[html.Div(children=dcc.Graph(id='popylation', figure=FigurePop(svalue))), 
-                     ],style={'width':'49.50%',"height": "610px",'display':'inline-block',
-                                 'vertical-align':'middle',
-                                 'border':'3px solid','marginLeft':3,'marginRight':0,'marginTop':0,
-                                 'marginBottom':0, 'padding': '1px 1px 1px 2px'}),  
+             #html.Div(className="six  columns",  
+             #       children=[html.Div(children=dcc.Graph(id='popylation', figure=FigurePop(svalue))), 
+             #        ],style={'width':'49.50%',"height": "610px",'display':'inline-block',
+             #                    'vertical-align':'middle',
+             #                    'border':'3px solid','marginLeft':3,'marginRight':0,'marginTop':0,
+             #                    'marginBottom':0, 'padding': '1px 1px 1px 2px'}),  
               html.Div(
                 className="twelve columns", 
                 children=[html.Div(children=dash_table.DataTable(id='table-year',
-               
-                                                                 
-                fixed_rows={"headers": True}, #, "data": 4},                                                 
+                 fixed_rows={"headers": True}, #, "data": 4},                                                 
                 style_cell={"width": "100px",
                             'backgroundColor': '#111111',
                             'color': 'yellow'          
@@ -580,7 +571,6 @@ def render_content(value):
                             'backgroundColor': '#111111',
                             'color': 'yellow'          
                              },
-                
                 style_header={"backgroundColor": "#111111",
                               "color": "yellow",
                               "font-size": "18px",
@@ -630,9 +620,6 @@ def render_content(value):
 
 def render_content(value): 
     tab=value
-    print(tab)
-    print(svalue)
-    
     if tab == 'Table0':
         return [html.Div(
             children=[
@@ -914,7 +901,6 @@ def render_content(value):
 
 def drawFigurePie(value):
     ID1=value
-    #ID = pyperclip.paste()
     df2=df[df['ID1']==ID1]
     figure = px.pie(df2,
     values='POP',
@@ -931,7 +917,6 @@ def drawFigurePie(value):
         'xanchor': 'center',
         'yanchor': 'top'},
         font=dict(family="silom",size=18,color="Yellow"))
- 
     return figure
 
 @app.callback(Output("bottom-bar-graph", "figure"), 
@@ -1026,9 +1011,7 @@ def update_sungraph(value):
     ID1=value 
     df1=df[df['ID1']==ID1]
     color_discrete_sequence=['', '#FFAA00', '#00BFFF', '#2D5F91','#819FBD','#819FBD','#91D4D2', '#96BEE6', '#C0D8F0','#E8655F','#F1A39F','#48B7B4']
-
     fig = px.sunburst(df1, path=["IDNAME", "POP"])
- 
     figure =go.Figure(go.Sunburst(
                     labels=fig['data'][0]['labels'].tolist(),
                     parents=fig['data'][0]['parents'].tolist(),
@@ -1143,7 +1126,7 @@ def plot_countries(value):
 @app.callback(Output('graph_close', 'figure'), 
              Input("my-input", "value")) 
 
-def drawPropeth(value):
+def XdrawPropeth(value):
     #from pandas_datareader import data, wb
     trace_line = go.Scatter(x=list(df_stock.ds),
                                 y=list(df_stock.y),
@@ -1231,11 +1214,8 @@ def drawPropeth(value):
 def update_graph(clickData):
     if clickData:
         city = clickData['points'][0]['hovertext']
-        print("city: ", city)
         value=city
-        print("value: ", value)              
         land = country[country['ID'] == city]
-  
         fig1 = px.bar(land,  x='year', y="pop", 
             orientation= 'v',
             height=300,                     
@@ -1270,11 +1250,7 @@ def FigureStart(value):
     Tsummy = Tod_summy[Tod_summy['GR'] == value]
     Tsummy = Tsummy[Tsummy['F1'] != 'All'] 
     Tsummy.head() 
-    
     land = Tsummy 
-    print(land)
-    print("FigureStart Finisch!")
-       
     figure = px.bar(land,  x='F1', y="SUMM", 
     title="Распределение смертности население в 2022г. по МКБ-10",             
     orientation= 'v',
