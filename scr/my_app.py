@@ -23,7 +23,7 @@ from pandas_datareader import data, wb
 ################################## Alt-data ###############################
 cnx = sqlite3.connect('data/KZAPP.db')
 df=pd.read_sql_query("Select ID1, ID, IDNAME, POP, MKN, FKN FROM KZ_ALL where AGEN=1", cnx) 
-print(df)
+df.head()
 pop=pd.read_sql_query("Select ID, MKN, FKN FROM KZ_POP ORDER BY AGEN DESC", cnx) 
 my_list=['< 5 лет','5 - 9 лет','10 - 14 лет','15 - 19 лет','20 - 24 лет','25 - 29 лет','30 - 34 лет','35 - 39 лет',
 '40 - 44 лет','45 - 49 лет','50 - 54 лет','55 - 59 лет','60 - 64 лет','65 - 69 лет','70 - 74 лет','75 - 79 лет',
@@ -61,7 +61,9 @@ tod2=mkb[mkb['F1'] != "All"]
 #excel_data_df = pd.read_excel('data/Pilot2022.xlsx', sheet_name='Population')
 #population=excel_data_df[excel_data_df['Age']!='All']
 #allpop = pd.read_excel('data/Pilot2022.xlsx', sheet_name='AllPopulation')
-#df_stock= pd.read_sas(f'data/stock_price_FB.sas7bdat', encoding="latin-1")
+
+df_stock= pd.read_sas(f'data/stock_price_FB.sas7bdat', encoding="latin-1")
+df_stock.head() 
 #df_pred = pd.read_sas(f'data/pred_prophet_FB.sas7bdat', encoding="latin-1")
 #FP =pd.read_sas('data/All_prophet_fb.sas7bdat', encoding="latin-1")
 #pyperclip.copy("KZ-11")
