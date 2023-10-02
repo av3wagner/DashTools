@@ -65,5 +65,11 @@ tod2=mkb[mkb['F1'] != "All"]
 #population=excel_data_df[excel_data_df['Age']!='All']
 #allpop = pd.read_excel('data/Pilot2022.xlsx', sheet_name='AllPopulation')
 
+app = Dash(__name__)
+app.layout = html.Div([
+    html.Div(children='Hello World')
+])
+server=app.server
+
 if __name__ == '__main__':
-    app.run_server(debug=False)
+    app.run(debug=True)
