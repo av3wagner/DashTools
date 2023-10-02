@@ -1,4 +1,3 @@
-#%%writefile NNZ_app.py
 from datetime import datetime
 import pandas as pd
 import numpy as np
@@ -22,18 +21,6 @@ from prophet import Prophet
 from pandas_datareader import data, wb
 
 ################################## Alt-data ###############################
-#KZdata/KZAPP.db
-#KZdata/country_data_master.csv
-#KZdata/stock_price_FB.sas7bdat
-#KZdata/pred_prophet_FB.sas7bdat
-#KZdata/All_prophet_fb.sas7bdat
-#country.csv
-#data/gadm36_KAZ_2.csv
-#data/tod2022.csv
-#data/tod_age.csv
-#data/tod_summy.csv
-#data/NNRZS20230608/Pilot2022.xlsx
-
 cnx = sqlite3.connect('data/KZAPP.db')
 df=pd.read_sql_query("Select ID1, ID, IDNAME, POP, MKN, FKN FROM KZ_ALL where AGEN=1", cnx) 
 pop=pd.read_sql_query("Select ID, MKN, FKN FROM KZ_POP ORDER BY AGEN DESC", cnx) 
@@ -54,12 +41,10 @@ age_categories = ['0-14', '15-24', '25-54', '55-64', '65+']
 #df_pred = pd.read_sas(f'data/pred_prophet_FB.sas7bdat', encoding="latin-1")
 #FP =pd.read_sas('data/All_prophet_fb.sas7bdat', encoding="latin-1")
 #pyperclip.copy("KZ-11")
-
 ################################# Neu-data ################################
 country = pd.read_csv('data/country.csv')
 dfkaz = pd.read_csv('data/gadm36_KAZ_2.csv')
 dfkaz["unemp"]= np.random.uniform(10.4, dfkaz["IDNUM"])
-
 districts = dfkaz.NAME_1.values
 polygons = requests.get(
    'https://raw.githubusercontent.com/open-data-kazakhstan/geo-boundaries-kz/master/data/geojson/kz_1.json'
@@ -67,8 +52,6 @@ polygons = requests.get(
 Tod_summy = pd.read_csv('data/tod_summy.csv')
 tod2022 = pd.read_csv('data/tod2022.csv')
 GRlist = ['Всего', 'Мужчины', 'Женщины']
-tod2022.head() 
-
 tod_age = pd.read_csv('data/tod_age.csv')
 GRlist = ['Всего', 'Мужчины', 'Женщины']
 land = tod_age #[tod_age['F1'] != "All"]
@@ -114,7 +97,6 @@ tab_selected_style = {
 app = JupyterDash(external_stylesheets=[dbc.themes.SLATE])
 svalue="KZ-00"
 rcountry=country[country['ID'] == svalue]
-
 def fig_map(df):
     #print("fig_map wurde gestartet!")
     figm = px.choropleth(
@@ -143,7 +125,6 @@ def fig_map(df):
           )   
     figm.update_geos(fitbounds="locations", visible=True)
     return figm
-
 def FigureTod1(value):
     #print("FigureStart wurde gestartet!")
     figure = px.bar(tod1,  x='AGE', y="Count",
@@ -173,7 +154,6 @@ def FigureTod1(value):
         'yanchor': 'top'},
         font=dict(family="silom",size=18,color="Yellow"))
     return figure  
-
 def FigureTod2(value):
     print("FigureStart wurde gestartet!")
     figure = px.bar(tod2,  x='F1', y="SUMM",
@@ -203,11 +183,7 @@ def FigureTod2(value):
         'yanchor': 'top'},
         font=dict(family="silom",size=18,color="Yellow"))
     return figure 
-
-##############################################
-# Year              Age   Count
-# 2021        до 1 года   33708
-
+  
 def FigurePop(value):
     print("FigurepoРulation wurde gestartet!")
     figure = px.bar(population,  x='Age', y="Count",
@@ -236,9 +212,8 @@ def FigurePop(value):
         'xanchor': 'center',
         'yanchor': 'top'},
         font=dict(family="silom",size=18,color="Yellow"))
-    return figure  
-
-
+    return figure 
+  
 def plot_countries(value):
     dfM = Tsummy[Tsummy['GR'].isin(countries)]
           
@@ -287,13 +262,10 @@ app.layout = html.Div([
                      disabled=False,
                      style={'display': True},
                      value='Всего',
-                     #placeholder='Выберите группу для анализа',
                      options=[{'label': i, 'value': i} for i in GRlist],
                     )
 
          ],style={'width':'12%','display':'inline-block','vertical-align':'middle',
-                  #'background-color':'#FCE22A',
-                  #'margin':'0 auto', 'height':'15px',
                   'marginLeft':16,'marginRight':0,'marginTop':0,
                   'marginBottom':0, 'padding': '1px 1px 1px 1px'
       }), 
@@ -525,7 +497,6 @@ def render_content(value):
         ]
      
     elif tab == 'Table4':
-        print("Table4 OK!")
         return [html.H1("Прогноз заболеваемости с помощью анализа временных рядов (условные данные)", 
                  style={'textAlign': 'center', 'font-size': '42px', 'color': '#00BFFF'}),
             html.Div(
@@ -543,34 +514,6 @@ def render_content(value):
                     ),
                    ] 
                   ),
-        
-                html.Div(dash_table.DataTable(
-                id='table-end',
-                data=FP.to_dict('records'),    
-                columns=[
-                    {"name": i, "id": i, "deletable": True, "selectable": True} for i in FP.columns
-                  ],
-                fixed_rows={"headers": True, "data": 4},  
-                style_cell={"width": "100px",
-                              'backgroundColor': '#111111',
-                              'color': 'yellow'          
-                             },
-                
-                style_header={"backgroundColor": "#111111",
-                              "color": "yellow",
-                              "font-size": "12px",
-                              "fontWeight": "bold"
-                             },               
-
-                style_table={"height": "250px",
-                              "font-size": "18px",
-                              "margin": 0,
-                              "padding": "8px",
-                              "backgroundColor": "#111111"
-                              }), style={'width':'99.95%', 'height': '257px',  
-                                 'border':'3px solid','marginLeft':3,'marginRight':0,'marginTop':10,
-                                 'marginBottom':0, 'padding': '1px 1px 1px 2px'}
-               ) 
             ]    
     
     elif tab == 'Table5':
@@ -909,90 +852,7 @@ def plot_countries(value):
                            )
         
     }    
-
-@app.callback(Output('graph_close', 'figure'), 
-             Input("my-input", "value")) 
-
-def drawPropeth(value):
-    #from pandas_datareader import data, wb
-    trace_line = go.Scatter(x=list(df_stock.ds),
-                                y=list(df_stock.y),
-                                name="Aktual",
-                                showlegend=True)
-   
-    pred_line = go.Scatter(x=list(df_pred.ds),
-                                y=list(df_pred.yhat_upper),
-                                name="Prediction",
-                                showlegend=True)
-    data = [trace_line, pred_line] 
-     
-    layout = dict(
-        height=500,
-        autosize=False,
-        plot_bgcolor="#111111",
-        paper_bgcolor="#111111",
-        legend=dict(x=0.95, y=0.99,
-            traceorder="normal",
-            title='Aktual & Prognose',
-            font=dict(family="silom", size=14, color="yellow"),
-            bgcolor='#111111',
-            bordercolor='#FFFFFF',
-            borderwidth=2
-        ),   
-        
-        yaxis=dict(
-        title='Общая заболеваемость',
-        titlefont=dict(
-            family='silom"',
-            size=12,
-            color='yellow'
-        ),
-        showticklabels=True,
-        tickfont=dict(
-            family='Old Standard TT, serif',
-            size=12,
-            color='yellow'
-        ),
-      ),
-         
-        xaxis=dict(
-            showticklabels=True,
-            tickfont=dict(
-                family='Old Standard TT, serif',
-                size=12,
-                color='yellow'
-            ),
-            
-            showgrid=True, 
-            gridcolor='rgb(255, 255, 255)',
-            gridwidth=1,       
-            rangeselector=dict(
-                buttons=list([
-                    dict(count=1,
-                         label='1m',
-                         step='month',
-                         stepmode='backward'),
-                    dict(count=6,
-                         label='6m',
-                         step='month',
-                         stepmode='backward'),
-                    dict(count=1,
-                         label='YTD',
-                         step='year',
-                         stepmode='todate'),
-                    dict(count=1,
-                         label='1y',
-                         step='year',
-                         stepmode='backward'),
-                    dict(step='all')
-                ])
-            ),
-            rangeslider=dict(visible=True),
-            type='date'
-        ) 
-    )
-    return {"data": data, "layout": layout}
-
+###
 @app.callback(
     Output(component_id='my-graph1', component_property='children'),
     Output("my-input", "value"),
@@ -1031,7 +891,7 @@ def update_graph(clickData):
             font=dict(family="silom",size=18,color="Yellow"))
         return dcc.Graph(figure=fig1), value   
  
- 
+### 
 @app.callback(Output("my-graph1", "figure"),
               [Input('dropdown', 'value')])
               
@@ -1071,8 +931,6 @@ def FigureStart(value):
         'yanchor': 'top'},
         font=dict(family="silom",size=18,color="Yellow"))
     return figure   
-              
-              
 
 @app.callback(Output("my-graph5", "figure"),
               Input("my-input", "value"))
