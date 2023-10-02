@@ -61,9 +61,9 @@ mkb_list = ['All',  'C33-C34', 'C50', 'E10-E14',
  'K73, K74.0-K74.2, K74.6']
 mkb=tod_summy[tod_summy['GR'] != "Всего"]
 tod2=mkb[mkb['F1'] != "All"]
-excel_data_df = pd.read_excel('data/Pilot2022.xlsx', sheet_name='Population')
-population=excel_data_df[excel_data_df['Age']!='All']
-allpop = pd.read_excel('data/Pilot2022.xlsx', sheet_name='AllPopulation')
+#excel_data_df = pd.read_excel('data/Pilot2022.xlsx', sheet_name='Population')
+#population=excel_data_df[excel_data_df['Age']!='All']
+#allpop = pd.read_excel('data/Pilot2022.xlsx', sheet_name='AllPopulation')
 
 app = dash.Dash(__name__)
 server=app.server
