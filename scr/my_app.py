@@ -214,7 +214,5 @@ app.layout = html.Div([
    ],style={"background": "#111111", 'marginLeft':5,'marginRight':20}
   ) 
 
-
-
 if __name__ == '__main__':
     app.run(debug=True)
