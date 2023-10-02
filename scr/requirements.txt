@@ -3,7 +3,7 @@ dash==2.11.1
 dash_bootstrap_components==1.4.2
 dash-tools==1.11.1
 flask==2.2.2
-gunicorn==20.1.0
+gunicorn
 jupyter_dash==0.4.2
 numpy==1.23.5
 pandas==2.0.3
