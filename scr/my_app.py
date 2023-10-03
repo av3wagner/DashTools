@@ -105,12 +105,13 @@ tab_selected_style = {
 }
 
 ##########################################################
-app = dash.Dash(__name__)
-server = app.server
-#app = JupyterDash(external_stylesheets=[dbc.themes.SLATE])
-#server=app.server
+#app = dash.Dash(__name__)
+#server = app.server
+app = JupyterDash(external_stylesheets=[dbc.themes.SLATE])
+server=app.server
 svalue="KZ-00"
 rcountry=country[country['ID'] == svalue]
+print("17.rcountry",rcountry.head())
 
 def fig_map(df):  #OK!
     figm = px.choropleth(
