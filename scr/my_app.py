@@ -12,7 +12,7 @@ from dash import Dash, dcc, html, Input, Output, State, callback
 import plotly.express as px
 import plotly.graph_objects as go
 import chart_studio.plotly as py 
-#from jupyter_dash import JupyterDash
+from jupyter_dash import JupyterDash
 import flask
 import json
 import requests
