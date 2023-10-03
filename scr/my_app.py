@@ -12,7 +12,7 @@ from dash import Dash, dcc, html, Input, Output, State, callback
 import plotly.express as px
 import plotly.graph_objects as go
 import chart_studio.plotly as py 
-from jupyter_dash import JupyterDash
+#from jupyter_dash import JupyterDash
 import flask
 import json
 import requests
@@ -105,8 +105,10 @@ tab_selected_style = {
 }
 
 ##########################################################
-app = JupyterDash(external_stylesheets=[dbc.themes.SLATE])
-server=app.server
+app = dash.Dash(__name__)
+server = app.server
+#app = JupyterDash(external_stylesheets=[dbc.themes.SLATE])
+#server=app.server
 svalue="KZ-00"
 rcountry=country[country['ID'] == svalue]
 
