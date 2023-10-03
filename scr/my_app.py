@@ -72,6 +72,23 @@ df_stock=pd.read_csv('data/df_stock.csv')
 df_pred=pd.read_csv('data/df_pred.csv')
 FP=pd.read_csv('data/FP.csv')
 
+print("1.df", df.head())
+print("2.pop",pop.head())
+print("3.age_df",age_df.head())
+print("4.df_stock",df_stock.head())
+print("5.df_pred",df_pred.head())
+print("6.FP",FP.head())
+print("7.country",country.head())
+print("8.dfkaz",dfkaz.head())
+print("9.tod2022",tod2022.head()) 
+print("10.tod_age",tod_age.head()) 
+print("11.tod1", tod1.head())
+print("12.tod_summy",tod_summy.head())
+print("13.tod_summy",tod_summy.head())
+print("14.tod2",tod2.head())
+print("15.population",population.head())
+print("16.allpop",allpop.head())
+##########################################################
 colors = {
     'background': '#4A235A',
     'background2': 'black',
