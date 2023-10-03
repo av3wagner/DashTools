@@ -138,7 +138,7 @@ def fig_map(df):  #OK!
     figm.update_geos(fitbounds="locations", visible=True)
     return figm
 
-def FigureTod2(value):
+def FigureTod2(value): #OK!
     print("FigureStart wurde gestartet!")
     figure = px.bar(tod2,  x='F1', y="SUMM",
     barmode="group",                 
@@ -197,6 +197,7 @@ def FigurePop(value): #OK!
         'yanchor': 'top'},
         font=dict(family="silom",size=18,color="Yellow"))
     return figure  
+  
 app.title = "Kazakhstan Dashboard"
 app.layout = html.Div([
   html.Div(className="row", children=[ 
