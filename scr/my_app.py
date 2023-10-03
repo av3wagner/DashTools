@@ -872,7 +872,44 @@ def render_content(value):
    ])]    
 
 #######################################################################
+@app.callback(
+    Output(component_id='my-graph1', component_property='children'),
+    Output("my-input", "value"),
+    Input(component_id='map_plot1', component_property='clickData'))
 
+def update_graph(clickData):
+    if clickData:
+        city = clickData['points'][0]['hovertext']
+        print("city: ", city)
+        value=city
+        print("value: ", value)              
+        land = country[country['ID'] == city]
+  
+        fig1 = px.bar(land,  x='year', y="pop", 
+            orientation= 'v',
+            height=300,                     
+            color = "pop", hover_data={'pop': False},
+            labels=dict(y="Anzahl", x="Year"), 
+     
+        color_discrete_sequence = px.colors.sequential.Plasma_r).update_layout(
+        font=dict(family="silom",
+                   size=14, 
+                   color="Yellow"),
+        plot_bgcolor = "#111111",
+        paper_bgcolor= "#111111")
+         
+        fig1.update_xaxes(tickangle=45, title_text="Territorium",title_font={"size": 14},
+        title_standoff=5, tickfont=dict(family='silom', color='Yellow', size=12))
+        fig1.update_yaxes(title_text="Anzahl",title_font={"size": 12},title_standoff=5)
+        
+        fig1.update_layout(title={
+            'y':0.99,
+            'x':0.5,
+            'xanchor': 'center',
+            'yanchor': 'top'},
+            font=dict(family="silom",size=18,color="Yellow"))
+        return dcc.Graph(figure=fig1), value   
+ 
 #######################################################################
 
 if __name__ == '__main__':
