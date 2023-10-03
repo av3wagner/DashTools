@@ -61,12 +61,16 @@ tod2=mkb[mkb['F1'] != "All"]
 #excel_data_df = pd.read_excel('data/Pilot2022.xlsx', sheet_name='Population')
 #population=excel_data_df[excel_data_df['Age']!='All']
 #allpop = pd.read_excel('data/Pilot2022.xlsx', sheet_name='AllPopulation')
+population=pd.read_csv('data/population.csv')
+allpo=pd.read_csv('data/allpo.csv')
 
 #df_stock= pd.read_sas(f'data/stock_price_FB.sas7bdat', encoding="latin-1")
-#df_stock.head() 
 #df_pred = pd.read_sas(f'data/pred_prophet_FB.sas7bdat', encoding="latin-1")
 #FP =pd.read_sas('data/All_prophet_fb.sas7bdat', encoding="latin-1")
 #pyperclip.copy("KZ-11")
+df_stock=pd.read_csv('data/df_stock.csv')
+df_pred=pd.read_csv('data/df_pred.csv')
+FP=pd.read_csv('data/FP.csv')
 
 colors = {
     'background': '#4A235A',
