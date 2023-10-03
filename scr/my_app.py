@@ -206,8 +206,7 @@ def FigureTod2(value):
         'yanchor': 'top'},
         font=dict(family="silom",size=18,color="Yellow"))
     return figure 
-  
-'''
+
 def FigurePop(value):
     print("FigurepoРulation wurde gestartet!")
     figure = px.bar(population,  x='Age', y="Count",
@@ -237,7 +236,6 @@ def FigurePop(value):
         'yanchor': 'top'},
         font=dict(family="silom",size=18,color="Yellow"))
     return figure  
-'''
 
 def plot_countries(value):
     dfM = Tsummy[Tsummy['GR'].isin(countries)]
@@ -517,6 +515,7 @@ def render_content(value):
         ]
      
     elif tab == 'Table4':
+        print("Table4 OK!")
         return [html.H1("Прогноз заболеваемости с помощью анализа временных рядов (условные данные)", 
                  style={'textAlign': 'center', 'font-size': '42px', 'color': '#00BFFF'}),
             html.Div(
@@ -534,8 +533,36 @@ def render_content(value):
                     ),
                    ] 
                   ),
+        
+                html.Div(dash_table.DataTable(
+                id='table-end',
+                data=FP.to_dict('records'),    
+                columns=[
+                    {"name": i, "id": i, "deletable": True, "selectable": True} for i in FP.columns
+                  ],
+                fixed_rows={"headers": True, "data": 4},  
+                style_cell={"width": "100px",
+                              'backgroundColor': '#111111',
+                              'color': 'yellow'          
+                             },
+                
+                style_header={"backgroundColor": "#111111",
+                              "color": "yellow",
+                              "font-size": "12px",
+                              "fontWeight": "bold"
+                             },               
+
+                style_table={"height": "250px",
+                              "font-size": "18px",
+                              "margin": 0,
+                              "padding": "8px",
+                              "backgroundColor": "#111111"
+                              }), style={'width':'99.95%', 'height': '257px',  
+                                 'border':'3px solid','marginLeft':3,'marginRight':0,'marginTop':10,
+                                 'marginBottom':0, 'padding': '1px 1px 1px 2px'}
+               ) 
             ]    
-    
+     
     elif tab == 'Table5':
         print("Table5 OK!")
         return [html.Div([
@@ -548,12 +575,12 @@ def render_content(value):
                          'marginBottom':0, 'padding': '5px 0px 0px 0px'},
                 ),
             
-             #html.Div(className="six  columns",  
-             #       children=[html.Div(children=dcc.Graph(id='popylation', figure=FigurePop(svalue))), 
-             #        ],style={'width':'49.50%',"height": "610px",'display':'inline-block',
-             #                    'vertical-align':'middle',
-             #                    'border':'3px solid','marginLeft':3,'marginRight':0,'marginTop':0,
-             #                    'marginBottom':0, 'padding': '1px 1px 1px 2px'}),  
+             html.Div(className="six  columns",  
+                    children=[html.Div(children=dcc.Graph(id='popylation', figure=FigurePop(svalue))), 
+                     ],style={'width':'49.50%',"height": "610px",'display':'inline-block',
+                                 'vertical-align':'middle',
+                                 'border':'3px solid','marginLeft':3,'marginRight':0,'marginTop':0,
+                                 'marginBottom':0, 'padding': '1px 1px 1px 2px'}),  
               html.Div(
                 className="twelve columns", 
                 children=[html.Div(children=dash_table.DataTable(id='table-year',
@@ -636,7 +663,8 @@ def render_content(value):
                                  'border':'3px solid','marginLeft':3,'marginRight':0,'marginTop':0,
                                  'marginBottom':0, 'padding': '1px 1px 1px 2px'}),
 
-   ])]    
+   ])] 
+      
 #######################################################################
 @app.callback(Output('tabs-content-classes', 'children'),
               Input('tabs-with-classes', 'value'))
