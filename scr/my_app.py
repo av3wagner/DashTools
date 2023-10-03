@@ -62,7 +62,7 @@ tod2=mkb[mkb['F1'] != "All"]
 #population=excel_data_df[excel_data_df['Age']!='All']
 #allpop = pd.read_excel('data/Pilot2022.xlsx', sheet_name='AllPopulation')
 population=pd.read_csv('data/population.csv')
-allpo=pd.read_csv('data/allpo.csv')
+allpop=pd.read_csv('data/allpop.csv')
 
 #df_stock= pd.read_sas(f'data/stock_price_FB.sas7bdat', encoding="latin-1")
 #df_pred = pd.read_sas(f'data/pred_prophet_FB.sas7bdat', encoding="latin-1")
