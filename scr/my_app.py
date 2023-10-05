@@ -108,7 +108,11 @@ tab_selected_style = {
     "font-size": 18,
 }
 
+DesktopWidth="1707px"
+DesktopHeight="960px"
+
 image_path = 'assets/WagnerFoto.jpg'
+Front_path = 'assets/Front.jpg'
 def b64_image(image_filename):
     with open(image_filename, 'rb') as f:
         image = f.read()
@@ -319,10 +323,19 @@ app.layout = html.Div([
    ), 
        
  dcc.Tabs(id="tabs-with-classes", 
-              value='Table0', 
+              value='Table11', 
               parent_className='custom-tabs', 
               className='custom-tabs-container',
         children=[
+            dcc.Tab(
+                label="Титул-лист системы",
+                value="Table11",
+                style=tab_style,
+                selected_style=tab_selected_style,
+                className='custom-tab',
+                selected_className='custom-tab--selected'
+            ),
+            
             dcc.Tab(
                 label="Старт",
                 value="Table0",
@@ -401,7 +414,6 @@ app.layout = html.Div([
 ##########################################################
 @app.callback(Output('tabs-content-classes', 'children'),
               Input('tabs-with-classes', 'value'))
-
 def render_content(value): 
     tab=value
     if tab == 'Table0':
@@ -782,7 +794,17 @@ def render_content(value):
                               ], className='row col-7 align-content-start pt-4 ml-2 pl-5 pr-0')
                     ], className='row mt-4 bg-light rounded pt-2'),
              ],className='container'
-           )    
+           )
+    elif tab == 'Table11':
+        return html.Div([
+               html.Img(src=b64_image(Front_path),
+                        style={
+                        "display": "inline-block",
+                        "width": "99%",
+                        "margin-left": "0.5%",
+                        "verticalAlign": "top"
+                    })
+            ])
 ############################################################     
 @app.callback(Output("pie_graph", "figure"), 
               Input("my-input", "value"))
@@ -1294,4 +1316,3 @@ def FigureTod1(value):
 
 if __name__ == '__main__':
     app.run(debug=False)
-
