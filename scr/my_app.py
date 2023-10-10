@@ -682,6 +682,7 @@ def render_content(value):
             ])
     
     elif tab == "Table10":
+        print("Table10, assets/GesamtNNRZ.pdf")
         return html.Div([
                html.ObjectEl(id="PdfSchow",
                data = "assets/GesamtNNRZ.pdf", 
