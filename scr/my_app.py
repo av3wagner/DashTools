@@ -315,20 +315,19 @@ app.layout = html.Div([
                   'marginBottom':0, 'padding': '1px 1px 1px 1px'
       }), 
       
-       html.Div([html.Label(['Информация о системе и авторе'], style={'color': 'yellow'}),
-        dcc.Dropdown(id='SysInfo',
-                     multi=False,
-                     clearable=True,
-                     disabled=False,
-                     style={'display': True},
-                     value='О системе',
-                     options=[{'label': i, 'value': i} for i in DocuList],
-                    )         
-
-         ],style={'width':'12%','display':'inline-block','vertical-align':'middle',
-                  'marginLeft':16,'marginRight':0,'marginTop':0,
-                  'marginBottom':0, 'padding': '1px 1px 1px 1px'
-      }),  
+       #html.Div([html.Label(['Информация о системе и авторе'], style={'color': 'yellow'}),
+       # dcc.Dropdown(id='SysInfo',
+       #              multi=False,
+       #              clearable=True,
+       #              disabled=False,
+       #              style={'display': True},
+       #              value='О системе',
+       #              options=[{'label': i, 'value': i} for i in DocuList],
+       #             )         
+       #  ],style={'width':'12%','display':'inline-block','vertical-align':'middle',
+       #           'marginLeft':16,'marginRight':0,'marginTop':0,
+       #           'marginBottom':0, 'padding': '1px 1px 1px 1px'
+      #}),  
       
      html.Div(["", 
              dcc.Input(id='my-input', value='KZ-19', type='text', placeholder='', 
