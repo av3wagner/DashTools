@@ -114,7 +114,7 @@ tab_selected_style = {
 DesktopWidth="1707px"
 DesktopHeight="960px"
 image_path = 'assets/WagnerFoto.jpg'
-Front_path = 'assets/Front2.jpg'
+Front_path = 'assets/Front.jpg'
 def b64_image(image_filename):
     with open(image_filename, 'rb') as f:
         image = f.read()
