@@ -411,14 +411,14 @@ app.layout = html.Div([
                 className='custom-tab',
                 selected_className='custom-tab--selected'
             ),
-            dcc.Tab(
-                label="O системе и авторе",
-                value="Table10",
-                style=tab_style,
-                selected_style=tab_selected_style,
-                className='custom-tab',
-                selected_className='custom-tab--selected'
-            ),
+            #dcc.Tab(
+            #    label="O системе и авторе",
+            #    value="Table10",
+            #    style=tab_style,
+            #    selected_style=tab_selected_style,
+            #    className='custom-tab',
+            #    selected_className='custom-tab--selected'
+            #),
          ],
          style=tabs_styles,
          colors={"border": "yellow", "primary": "red",
@@ -430,6 +430,7 @@ app.layout = html.Div([
 ##########################################################
 @app.callback(Output('tabs-content-classes', 'children'),
               Input('tabs-with-classes', 'value'))
+
 def render_content(value): 
     tab=value
     if tab == 'Table0':
@@ -713,13 +714,13 @@ def render_content(value):
                     })
             ])
     
-    elif tab == "Table10":
-        return html.Div(id='output',  
-               style={'width':'99.5%',"height": "1100px",'display':'inline-block',
-                      'vertical-align':'middle',
-                      'border':'3px solid','marginLeft':3,
-                      'marginRight':0,'marginTop':0,
-                      'marginBottom':0, 'padding': '1px 1px 1px 2px'})
+    #elif tab == "Table10":
+    #    return html.Div(id='output',  
+    #           style={'width':'99.5%',"height": "1100px",'display':'inline-block',
+    #                  'vertical-align':'middle',
+    #                  'border':'3px solid','marginLeft':3,
+    #                  'marginRight':0,'marginTop':0,
+    #                  'marginBottom':0, 'padding': '1px 1px 1px 2px'})
         
 @app.callback(Output('output', 'children'),
               Input('SysInfo', 'value')) 
