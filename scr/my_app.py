@@ -1232,7 +1232,19 @@ def snapshot_page(value):
     if img==1:
         return html.Div([
             html.Div([
-            html.Div(id='tabs-div', children=[image], className='tab-div'), 
+            #html.Div(id='tabs-div', children=[image], className='tab-div'), 
+            #image = html.Img(src='assets/WagnerFoto.jpg', style={"height":"200", "width":"150", 'padding-left': 220,})  
+            html.Img(src=b64_image('assets/WagnerFoto.jpg'),
+                        style={
+                        "display": "inline-block",
+                        "width": "150px",
+                        "height": "200px",    
+                        "margin-left": "220px",
+                        "margin-right": "0px", 
+                        'marginTop':0,   
+                        'marginBottom':0, 'padding': '1px 1px 1px 1px',    
+                        "verticalAlign": "top"
+               }), 
             html.H1(children=Text, style={'color': 'white', 'textAlign': 'left', 'padding-left': 100}),
             html.H1(children="x", style={'color': "#111111", 'textAlign': 'left', 'padding-left': 100, "font-size": "2.4rem", "line-height": "0.7em"}),            
             html.Div([dcc.Markdown(children=MDfile)], style={'color': 'yellow', "font-size": "1.4rem", 'padding-left': 100, 'display': 'display-inblock'}),
