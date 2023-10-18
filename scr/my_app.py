@@ -1188,8 +1188,8 @@ def snapshot_page(value):
     elif value == 'Система: история создания':
         img=4
         Text="История разработки Аналитической Информационной Системы в медицине, здравоохранении и смежных областях"
-        MDfile=System3     
-            
+        MDfile=System3  
+             
     if img==1:
         return html.Div([
             html.Div([
@@ -1224,17 +1224,19 @@ def snapshot_page(value):
     elif img==4:
         return html.Div([
             html.Div([
+            html.H1(children=Text, style={'color': 'white', 'textAlign': 'left', 'padding-left': 100, "font-size": "2.4rem"}),    
+            html.H1(children="x", style={'color': "#111111", 'textAlign': 'left', 'padding-left': 100, "font-size": "2.4rem", "line-height": "0.7em"}), 
+            html.Div([dcc.Markdown(children=MDfile)], style={'color': 'yellow', "font-size": "1.4rem", 'padding-left': 100, 'display': 'display-inblock'}),
+            html.Br(),  
+              
             html.H1(children="Приложения", style={'color': 'white', 'textAlign': 'left', 'padding-left': 100, "font-size": "2.4rem"}), 
             html.H2(children='Документы о совместной лаборатории «Математического моделирования в медицине и экологии»"', style={'color': 'white', 'textAlign': 'left', 'padding-left': 100, "font-size": "2.0rem"}),   
             html.H1(children="x", style={'color': "#111111", 'textAlign': 'left', 'padding-left': 100, "font-size": "2.4rem", "line-height": "0.7em"}),            
-            html.Div([dcc.Markdown(children=MDfile)], style={'color': 'yellow', "font-size": "1.4rem", 'padding-left': 100, 'display': 'display-inblock'}),
-            html.Br(),  
-            html.H1(children=Text, style={'color': 'white', 'textAlign': 'left', 'padding-left': 100, "font-size": "2.4rem"}),   
             html.H2(children="Письмо Академику Амербаеву и его рекомендации по созданию совместной лаборатории, октябрь 1994", style={'color': 'white', 'textAlign': 'left', 'padding-left': 100, "font-size": "2.0rem"}),    
             html.Img(src=b64_image('assets/Amerbaew.jpg'),
                         style={
                         "display": "inline-block",
-                        "width": "60%",
+                        "width": "40%",
                         "height": "1200px",    
                         "margin-left": "200px",
                         "margin-right": "0px", 
@@ -1248,7 +1250,7 @@ def snapshot_page(value):
                html.Img(src=b64_image('assets/Labor1.jpg'),
                         style={
                         "display": "inline-block",
-                        "width": "60%",
+                        "width": "40%",
                         "height": "1200px",    
                         "margin-left": "200px",
                         "margin-right": "0px", 
@@ -1261,7 +1263,7 @@ def snapshot_page(value):
               html.Img(src=b64_image('assets/Labor2.jpg'),
                         style={
                         "display": "inline-block",
-                        "width": "60%",
+                        "width": "40%",
                         "height": "1200px",    
                         "margin-left": "200px",
                         "margin-right": "0px", 
@@ -1277,7 +1279,7 @@ def snapshot_page(value):
                         style={
                         "display": "inline-block",
                         "width": "60%",
-                        "height": "1200px",    
+                        "height": "900px",    
                         "margin-left": "200px",
                         "margin-right": "0px", 
                         'marginTop':0,   
@@ -1287,11 +1289,11 @@ def snapshot_page(value):
               
              html.H1(children="x", style={'color': "#111111", 'textAlign': 'left', 'padding-left': 100, "font-size": "2.4rem", "line-height": "0.7em"}),  
              html.H2(children="Рецензия на монографию О.Сакбаева и А.Вагнера", style={'color': 'white', 'textAlign': 'left', 'padding-left': 100, "font-size": "2.0rem"}),      
-             html.Img(src=b64_image('assets/Monograph1.jpg'),
+             html.Img(src=b64_image('assets/Monograph2.jpg'),
                         style={
                         "display": "inline-block",
                         "width": "60%",
-                        "height": "1200px",    
+                        "height": "900px",    
                         "margin-left": "200px",
                         "margin-right": "0px", 
                         'marginTop':0,   
@@ -1307,7 +1309,7 @@ def snapshot_page(value):
                         style={
                         "display": "inline-block",
                         "width": "60%",
-                        "height": "1200px",    
+                        "height": "900px",    
                         "margin-left": "200px",
                         "margin-right": "0px", 
                         'marginTop':0,   
@@ -1321,7 +1323,7 @@ def snapshot_page(value):
                         style={
                         "display": "inline-block",
                         "width": "60%",
-                        "height": "1200px",    
+                        "height": "900px",    
                         "margin-left": "200px",
                         "margin-right": "0px", 
                         'marginTop':0,   
