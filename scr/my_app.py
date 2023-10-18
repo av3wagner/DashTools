@@ -550,27 +550,6 @@ System3="""
 * Ким Сергей Васильевич.
 """
 
-System4=""" 
-# Приложения
-## Документы о совместной лаборатории «Математического моделирования в медицине и экологии»
-
-"""
-System5=""" 
-# Примечание
-В настоящее время автор готовит продолжение и работает над монографией под временным названием «Современные методы анализа и прогноза данных о состоянии здоровья населения». В этой работе будет обобщен и систематизирован 30 летний опыт работы автора в научно-исследовательских организациях и предприятиях, занимающихся анализом клинических исследований, оптимизацией и совершенствованием системы здравоохранения; опыт работы в крупных мировых фармоцевтических и страховых компаниях, связанных с вопросами анализа и прогноза здоровья населения, анализом влиянием различных факторов и режимов лечения на результаты терапии и оценка её стоимости для государства. Примерами таких проектов являются, например, следующие:
-* Оценка стоимости терапии и прогноз стоимости реабилитации пациентовв, перенесших инфаркт-инсульт на основании данных государственного регистра этих случаев (Эрланген-регистр) и даных Государственного статистического бюро Германии (Висбаден). По нашим расчетам и прогнозам это составило примерно 50.000€ в год на одного пациента.
-
-## Автор также использует результаты и многолетний опыт построения «Автоматизированных систем научных исследований в медицине и смежных областях». Работа над этой монографией началась более 20 лет назад и планируется быть законченой в ближайшие 1-2 года. 
-
-
-
-## Справка:
-
-
-### Автор оказал помощь в анализе данных для диссертационных работ на соискание ученой степени кандидата медицинских наук (12 соискателям) и на соискание ученой степени доктора медицинских наук (6 соискателям). Соискатели ученых степеней были гражданами Казахстана, Германии, Австрии и Египта.
-
-""" 
-
 ##############################################
 app = JupyterDash(external_stylesheets=[dbc.themes.SLATE])
 server=app.server
@@ -1241,15 +1220,17 @@ def snapshot_page(value):
             html.Div([dcc.Markdown(children=MDfile)], style={'color': 'yellow', "font-size": "1.4rem", 'padding-left': 100, 'display': 'display-inblock'}),
             html.Br()    
              ]),
+           ])
     elif img==4:
         return html.Div([
             html.Div([
-            html.H1(children=Text, style={'color': 'white', 'textAlign': 'left', 'padding-left': 100, "font-size": "2.4rem"}),    
+            html.H1(children="Приложения", style={'color': 'white', 'textAlign': 'left', 'padding-left': 100, "font-size": "2.4rem"}), 
+            html.H2(children='Документы о совместной лаборатории «Математического моделирования в медицине и экологии»"', style={'color': 'white', 'textAlign': 'left', 'padding-left': 100, "font-size": "2.0rem"}),   
             html.H1(children="x", style={'color': "#111111", 'textAlign': 'left', 'padding-left': 100, "font-size": "2.4rem", "line-height": "0.7em"}),            
             html.Div([dcc.Markdown(children=MDfile)], style={'color': 'yellow', "font-size": "1.4rem", 'padding-left': 100, 'display': 'display-inblock'}),
             html.Br(),  
             html.H1(children=Text, style={'color': 'white', 'textAlign': 'left', 'padding-left': 100, "font-size": "2.4rem"}),   
-            html.H1(children="Письмо Академику Амербаеву и его рекомендации по созданию совместной лаборатории, октябрь 1994", style={'color': 'white', 'textAlign': 'left', 'padding-left': 100, "font-size": "2.4rem"}),    
+            html.H2(children="Письмо Академику Амербаеву и его рекомендации по созданию совместной лаборатории, октябрь 1994", style={'color': 'white', 'textAlign': 'left', 'padding-left': 100, "font-size": "2.0rem"}),    
             html.Img(src=b64_image('assets/Amerbaew.jpg'),
                         style={
                         "display": "inline-block",
@@ -1263,7 +1244,7 @@ def snapshot_page(value):
                }), 
                
                html.H1(children="x", style={'color': "#111111", 'textAlign': 'left', 'padding-left': 100, "font-size": "2.4rem", "line-height": "0.7em"}), 
-               html.H1(children="Совместный Приказ Института Математики и Научного Центра Минздрава о создании совместной лаборатории", style={'color': 'white', 'textAlign': 'left', 'padding-left': 100, "font-size": "2.4rem"}),    
+               html.H2(children="Совместный Приказ Института Математики и Научного Центра Минздрава о создании совместной лаборатории", style={'color': 'white', 'textAlign': 'left', 'padding-left': 100, "font-size": "2.0rem"}),    
                html.Img(src=b64_image('assets/Labor1.jpg'),
                         style={
                         "display": "inline-block",
@@ -1276,7 +1257,7 @@ def snapshot_page(value):
                         "verticalAlign": "top"
                }), 
               html.H1(children="x", style={'color': "#111111", 'textAlign': 'left', 'padding-left': 100, "font-size": "2.4rem", "line-height": "0.7em"}),      
-              html.H1(children="Совместно утвержденное Положение о лаборатории со стороны Института Математики и Научного Центра Минздрава РК", style={'color': 'white', 'textAlign': 'left', 'padding-left': 100, "font-size": "2.4rem"}),    
+              html.H2(children="Совместно утвержденное Положение о лаборатории со стороны Института Математики и Научного Центра Минздрава РК", style={'color': 'white', 'textAlign': 'left', 'padding-left': 100, "font-size": "2.0rem"}),    
               html.Img(src=b64_image('assets/Labor2.jpg'),
                         style={
                         "display": "inline-block",
@@ -1288,10 +1269,10 @@ def snapshot_page(value):
                         'marginBottom':0, 'padding': '1px 1px 1px 1px',    
                         "verticalAlign": "top"
                }), 
+              
              html.H1(children="x", style={'color': "#111111", 'textAlign': 'left', 'padding-left': 100, "font-size": "2.4rem", "line-height": "0.7em"}),   
-             
              html.H1(children="Избранная информация о опубликованных и находящихся в разработке научных монографиях автора в области анализа и прогноза здоровья населения", style={'color': 'white', 'textAlign': 'left', 'padding-left': 100, "font-size": "2.4rem"}),     
-             html.H2(children="Обложка монографии. Алма-Ата 1995 ", style={'color': 'white', 'textAlign': 'left', 'padding-left': 100, "font-size": "2.4rem"}),      
+             html.H2(children="Обложка монографии. Алма-Ата 1995 ", style={'color': 'white', 'textAlign': 'left', 'padding-left': 100, "font-size": "2.0rem"}),      
              html.Img(src=b64_image('assets/Monograph1.jpg'),
                         style={
                         "display": "inline-block",
@@ -1305,7 +1286,7 @@ def snapshot_page(value):
                }), 
               
              html.H1(children="x", style={'color': "#111111", 'textAlign': 'left', 'padding-left': 100, "font-size": "2.4rem", "line-height": "0.7em"}),  
-             html.H2(children="Рецензия на монографию О.Сакбаева и А.Вагнера", style={'color': 'white', 'textAlign': 'left', 'padding-left': 100, "font-size": "2.4rem"}),      
+             html.H2(children="Рецензия на монографию О.Сакбаева и А.Вагнера", style={'color': 'white', 'textAlign': 'left', 'padding-left': 100, "font-size": "2.0rem"}),      
              html.Img(src=b64_image('assets/Monograph1.jpg'),
                         style={
                         "display": "inline-block",
@@ -1317,8 +1298,11 @@ def snapshot_page(value):
                         'marginBottom':0, 'padding': '1px 1px 1px 1px',    
                         "verticalAlign": "top"
                }), 
+
              html.H1(children="x", style={'color': "#111111", 'textAlign': 'left', 'padding-left': 100, "font-size": "2.4rem", "line-height": "0.7em"}),    
-             html.H2(children="Математическое моделирование при помощи метода Монте-Карло для сравнения стоимости двух способов лечения (см. скрин статьи ниже)", style={'color': 'white', 'textAlign': 'left', 'padding-left': 100, "font-size": "2.4rem"}),       
+             html.H1(children="Примечание", style={'color': 'white', 'textAlign': 'left', 'padding-left': 100, "font-size": "2.4rem"}),             
+             html.H2(children="В настоящее время автор готовит продолжение и работает над монографией под временным названием «Современные методы анализа и прогноза данных о состоянии здоровья населения». В этой работе будет обобщен и систематизирован 30 летний опыт работы автора в научно-исследовательских организациях и предприятиях, занимающихся анализом клинических исследований, оптимизацией и совершенствованием системы здравоохранения; опыт работы в крупных мировых фармоцевтических и страховых компаниях, связанных с вопросами анализа и прогноза здоровья населения, анализом влиянием различных факторов и режимов лечения на результаты терапии и оценка её стоимости для государства. Примерами таких проектов являются, например, следующие:", style={'color': 'white', 'textAlign': 'left', 'padding-left': 100, "font-size": "2.0rem"}),       
+             html.H3(children="Оценка стоимости терапии и прогноз стоимости реабилитации пациентовв, перенесших инфаркт-инсульт на основании данных государственного регистра этих случаев (Эрланген-регистр) и даных Государственного статистического бюро Германии (Висбаден). По нашим расчетам и прогнозам это составило примерно 50.000€ в год на одного пациента.", style={'color': 'white', 'textAlign': 'left', 'padding-left': 100, "font-size": "1.8rem"}),               
              html.Img(src=b64_image('assets/Paper1.jpg'),
                         style={
                         "display": "inline-block",
@@ -1332,7 +1316,7 @@ def snapshot_page(value):
                }), 
               
              html.H1(children="x", style={'color': "#111111", 'textAlign': 'left', 'padding-left': 100, "font-size": "2.4rem", "line-height": "0.7em"}), 
-             html.H2(children="Проект в области кардиологии (см. скрин статьи ниже). Работа была доложена на пленарном заседании международного Кадиоконгресса в Барселоне, 2009 г.   ", style={'color': 'white', 'textAlign': 'left', 'padding-left': 100, "font-size": "2.4rem"}),       
+             html.H3(children="Проект в области кардиологии (см. скрин статьи ниже). Работа была доложена на пленарном заседании международного Кадиоконгресса в Барселоне, 2009 г.   ", style={'color': 'white', 'textAlign': 'left', 'padding-left': 100, "font-size": "1.8rem"}),       
              html.Img(src=b64_image('assets/Paper2.jpg'),
                         style={
                         "display": "inline-block",
@@ -1344,9 +1328,12 @@ def snapshot_page(value):
                         'marginBottom':0, 'padding': '1px 1px 1px 1px',    
                         "verticalAlign": "top"
                }), 
-             html.H1(children="x", style={'color': "#111111", 'textAlign': 'left', 'padding-left': 100, "font-size": "2.4rem", "line-height": "0.7em"}),    
+             html.H1(children="x", style={'color': "#111111", 'textAlign': 'left', 'padding-left': 100, "font-size": "2.4rem", "line-height": "0.7em"}),
+             html.H2(children="Автор также использует результаты и многолетний опыт построения «Автоматизированных систем научных исследований в медицине и смежных областях». Работа над этой монографией началась более 20 лет назад и планируется быть законченой в ближайшие 1-2 года. ", style={'color': 'white', 'textAlign': 'left', 'padding-left': 100, "font-size": "2.0rem"}),        
+             html.H2(children="Справка:", style={'color': 'white', 'textAlign': 'left', 'padding-left': 100, "font-size": "2.0rem"}),        
+             html.H3(children="Автор оказал помощь в анализе данных для диссертационных работ на соискание ученой степени кандидата медицинских наук (12 соискателям) и на соискание ученой степени доктора медицинских наук (6 соискателям). Соискатели ученых степеней были гражданами Казахстана, Германии, Австрии и Египта", style={'color': 'white', 'textAlign': 'left', 'padding-left': 100, "font-size": "1.8rem"}),       
             ])    
-         
+          ])
 @app.callback(Output("pie_graph", "figure"), 
               Input("my-input", "value"))
 
