@@ -548,35 +548,17 @@ System3="""
 * Слажнева Татьяна Ивановна,
 * Абилкасимов Ерасыл Абилкасимович,
 * Ким Сергей Васильевич.
+"""
 
+System4=""" 
 # Приложения
 ## Документы о совместной лаборатории «Математического моделирования в медицине и экологии»
-### Письмо Академику Амербаеву и его рекомендации по созданию совместной лаборатории, октябрь 1994 
-![Mein image]("./assets/Amerbaew.jpg")
 
-
-### Совместный Приказ Института Математики и Научного Центра Минздрава о создании совместной лаборатории 
-![Mein image]("./assets/Labor1.jpg")
-
-### Совместно утвержденное Положение о лаборатории со стороны Института Математики и Научного Центра Минздрава РК 
-![Mein image]("./assets/Labor2.jpg")
-
-
-## Избранная информация о опубликованных и находящихся в разработке научных монографиях автора в области анализа и прогноза здоровья населения
-### Обложка монографии. Алма-Ата 1995
-![Mein image]("./assets/Monograph1.jpg")
-
-### Рецензия на монографию О.Сакбаева и А.Вагнера
-![Mein image]("./assets/Monograph2.jpg")
-
+"""
+System5=""" 
 # Примечание
 В настоящее время автор готовит продолжение и работает над монографией под временным названием «Современные методы анализа и прогноза данных о состоянии здоровья населения». В этой работе будет обобщен и систематизирован 30 летний опыт работы автора в научно-исследовательских организациях и предприятиях, занимающихся анализом клинических исследований, оптимизацией и совершенствованием системы здравоохранения; опыт работы в крупных мировых фармоцевтических и страховых компаниях, связанных с вопросами анализа и прогноза здоровья населения, анализом влиянием различных факторов и режимов лечения на результаты терапии и оценка её стоимости для государства. Примерами таких проектов являются, например, следующие:
 * Оценка стоимости терапии и прогноз стоимости реабилитации пациентовв, перенесших инфаркт-инсульт на основании данных государственного регистра этих случаев (Эрланген-регистр) и даных Государственного статистического бюро Германии (Висбаден). По нашим расчетам и прогнозам это составило примерно 50.000€ в год на одного пациента.
-* Математическое моделирование при помощи метода Монте-Карло для сравнения стоимости двух способов лечения (см. скрин статьи ниже).
-![Mein image]("./assets/Paper1.jpg")
-
-* Проект в области кардиологии (см. скрин статьи ниже). Работа была доложена на пленарном заседании международного Кадиоконгресса в Барселоне, 2009 г.
-![Mein image]("./assets/Paper2.jpg")
 
 ## Автор также использует результаты и многолетний опыт построения «Автоматизированных систем научных исследований в медицине и смежных областях». Работа над этой монографией началась более 20 лет назад и планируется быть законченой в ближайшие 1-2 года. 
 
@@ -1225,7 +1207,7 @@ def snapshot_page(value):
         Text="Аналитическая Информационная Система «АИС ВTИИ»"
         MDfile=System2   
     elif value == 'Система: история создания':
-        img=0
+        img=4
         Text="История разработки Аналитической Информационной Системы в медицине, здравоохранении и смежных областях"
         MDfile=System3     
             
@@ -1259,62 +1241,104 @@ def snapshot_page(value):
             html.Div([dcc.Markdown(children=MDfile)], style={'color': 'yellow', "font-size": "1.4rem", 'padding-left': 100, 'display': 'display-inblock'}),
             html.Br()    
              ]),
-             html.Img(src=b64_image('assets/Amerbaew.jpg'),
+    elif img==4:
+        return html.Div([
+            html.Div([
+            html.H1(children=Text, style={'color': 'white', 'textAlign': 'left', 'padding-left': 100, "font-size": "2.4rem"}),    
+            html.H1(children="x", style={'color': "#111111", 'textAlign': 'left', 'padding-left': 100, "font-size": "2.4rem", "line-height": "0.7em"}),            
+            html.Div([dcc.Markdown(children=MDfile)], style={'color': 'yellow', "font-size": "1.4rem", 'padding-left': 100, 'display': 'display-inblock'}),
+            html.Br(),  
+            html.H1(children=Text, style={'color': 'white', 'textAlign': 'left', 'padding-left': 100, "font-size": "2.4rem"}),   
+            html.H1(children="Письмо Академику Амербаеву и его рекомендации по созданию совместной лаборатории, октябрь 1994", style={'color': 'white', 'textAlign': 'left', 'padding-left': 100, "font-size": "2.4rem"}),    
+            html.Img(src=b64_image('assets/Amerbaew.jpg'),
                         style={
                         "display": "inline-block",
-                        "width": "75%",
+                        "width": "60%",
                         "height": "1200px",    
-                        "margin-left": "20px",
+                        "margin-left": "200px",
                         "margin-right": "0px", 
                         'marginTop':0,   
                         'marginBottom':0, 'padding': '1px 1px 1px 1px',    
                         "verticalAlign": "top"
                }), 
-               html.H1(children="x", style={'color': "#111111", 'textAlign': 'left', 'padding-left': 100, "font-size": "2.4rem", "line-height": "0.7em"}),      
+               
+               html.H1(children="x", style={'color': "#111111", 'textAlign': 'left', 'padding-left': 100, "font-size": "2.4rem", "line-height": "0.7em"}), 
+               html.H1(children="Совместный Приказ Института Математики и Научного Центра Минздрава о создании совместной лаборатории", style={'color': 'white', 'textAlign': 'left', 'padding-left': 100, "font-size": "2.4rem"}),    
                html.Img(src=b64_image('assets/Labor1.jpg'),
                         style={
                         "display": "inline-block",
-                        "width": "75%",
+                        "width": "60%",
                         "height": "1200px",    
-                        "margin-left": "20px",
+                        "margin-left": "200px",
                         "margin-right": "0px", 
                         'marginTop':0,   
                         'marginBottom':0, 'padding': '1px 1px 1px 1px',    
                         "verticalAlign": "top"
                }), 
               html.H1(children="x", style={'color': "#111111", 'textAlign': 'left', 'padding-left': 100, "font-size": "2.4rem", "line-height": "0.7em"}),      
+              html.H1(children="Совместно утвержденное Положение о лаборатории со стороны Института Математики и Научного Центра Минздрава РК", style={'color': 'white', 'textAlign': 'left', 'padding-left': 100, "font-size": "2.4rem"}),    
               html.Img(src=b64_image('assets/Labor2.jpg'),
                         style={
                         "display": "inline-block",
-                        "width": "75%",
+                        "width": "60%",
                         "height": "1200px",    
-                        "margin-left": "20px",
+                        "margin-left": "200px",
                         "margin-right": "0px", 
                         'marginTop':0,   
                         'marginBottom':0, 'padding': '1px 1px 1px 1px',    
                         "verticalAlign": "top"
                }), 
              html.H1(children="x", style={'color': "#111111", 'textAlign': 'left', 'padding-left': 100, "font-size": "2.4rem", "line-height": "0.7em"}),   
-
-          html.Img(src=b64_image('assets/Paper1.jpg'),
+             
+             html.H1(children="Избранная информация о опубликованных и находящихся в разработке научных монографиях автора в области анализа и прогноза здоровья населения", style={'color': 'white', 'textAlign': 'left', 'padding-left': 100, "font-size": "2.4rem"}),     
+             html.H2(children="Обложка монографии. Алма-Ата 1995 ", style={'color': 'white', 'textAlign': 'left', 'padding-left': 100, "font-size": "2.4rem"}),      
+             html.Img(src=b64_image('assets/Monograph1.jpg'),
                         style={
                         "display": "inline-block",
-                        "width": "75%",
+                        "width": "60%",
                         "height": "1200px",    
-                        "margin-left": "20px",
+                        "margin-left": "200px",
+                        "margin-right": "0px", 
+                        'marginTop':0,   
+                        'marginBottom':0, 'padding': '1px 1px 1px 1px',    
+                        "verticalAlign": "top"
+               }), 
+              
+             html.H1(children="x", style={'color': "#111111", 'textAlign': 'left', 'padding-left': 100, "font-size": "2.4rem", "line-height": "0.7em"}),  
+             html.H2(children="Рецензия на монографию О.Сакбаева и А.Вагнера", style={'color': 'white', 'textAlign': 'left', 'padding-left': 100, "font-size": "2.4rem"}),      
+             html.Img(src=b64_image('assets/Monograph1.jpg'),
+                        style={
+                        "display": "inline-block",
+                        "width": "60%",
+                        "height": "1200px",    
+                        "margin-left": "200px",
                         "margin-right": "0px", 
                         'marginTop':0,   
                         'marginBottom':0, 'padding': '1px 1px 1px 1px',    
                         "verticalAlign": "top"
                }), 
              html.H1(children="x", style={'color': "#111111", 'textAlign': 'left', 'padding-left': 100, "font-size": "2.4rem", "line-height": "0.7em"}),    
-
+             html.H2(children="Математическое моделирование при помощи метода Монте-Карло для сравнения стоимости двух способов лечения (см. скрин статьи ниже)", style={'color': 'white', 'textAlign': 'left', 'padding-left': 100, "font-size": "2.4rem"}),       
+             html.Img(src=b64_image('assets/Paper1.jpg'),
+                        style={
+                        "display": "inline-block",
+                        "width": "60%",
+                        "height": "1200px",    
+                        "margin-left": "200px",
+                        "margin-right": "0px", 
+                        'marginTop':0,   
+                        'marginBottom':0, 'padding': '1px 1px 1px 1px',    
+                        "verticalAlign": "top"
+               }), 
+              
+             html.H1(children="x", style={'color': "#111111", 'textAlign': 'left', 'padding-left': 100, "font-size": "2.4rem", "line-height": "0.7em"}), 
+             html.H2(children="Проект в области кардиологии (см. скрин статьи ниже). Работа была доложена на пленарном заседании международного Кадиоконгресса в Барселоне, 2009 г.   ", style={'color': 'white', 'textAlign': 'left', 'padding-left': 100, "font-size": "2.4rem"}),       
              html.Img(src=b64_image('assets/Paper2.jpg'),
                         style={
                         "display": "inline-block",
-                        "width": "75%",
+                        "width": "60%",
                         "height": "1200px",    
-                        "margin-left": "20px",
+                        "margin-left": "200px",
                         "margin-right": "0px", 
                         'marginTop':0,   
                         'marginBottom':0, 'padding': '1px 1px 1px 1px',    
@@ -1322,7 +1346,7 @@ def snapshot_page(value):
                }), 
              html.H1(children="x", style={'color': "#111111", 'textAlign': 'left', 'padding-left': 100, "font-size": "2.4rem", "line-height": "0.7em"}),    
             ])    
-    
+         
 @app.callback(Output("pie_graph", "figure"), 
               Input("my-input", "value"))
 
