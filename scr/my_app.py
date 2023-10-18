@@ -1259,6 +1259,68 @@ def snapshot_page(value):
             html.Div([dcc.Markdown(children=MDfile)], style={'color': 'yellow', "font-size": "1.4rem", 'padding-left': 100, 'display': 'display-inblock'}),
             html.Br()    
              ]),
+             html.Img(src=b64_image('assets/Amerbaew.jpg'),
+                        style={
+                        "display": "inline-block",
+                        "width": "75%",
+                        "height": "1200px",    
+                        "margin-left": "20px",
+                        "margin-right": "0px", 
+                        'marginTop':0,   
+                        'marginBottom':0, 'padding': '1px 1px 1px 1px',    
+                        "verticalAlign": "top"
+               }), 
+               html.H1(children="x", style={'color': "#111111", 'textAlign': 'left', 'padding-left': 100, "font-size": "2.4rem", "line-height": "0.7em"}),      
+               html.Img(src=b64_image('assets/Labor1.jpg'),
+                        style={
+                        "display": "inline-block",
+                        "width": "75%",
+                        "height": "1200px",    
+                        "margin-left": "20px",
+                        "margin-right": "0px", 
+                        'marginTop':0,   
+                        'marginBottom':0, 'padding': '1px 1px 1px 1px',    
+                        "verticalAlign": "top"
+               }), 
+              html.H1(children="x", style={'color': "#111111", 'textAlign': 'left', 'padding-left': 100, "font-size": "2.4rem", "line-height": "0.7em"}),      
+              html.Img(src=b64_image('assets/Labor2.jpg'),
+                        style={
+                        "display": "inline-block",
+                        "width": "75%",
+                        "height": "1200px",    
+                        "margin-left": "20px",
+                        "margin-right": "0px", 
+                        'marginTop':0,   
+                        'marginBottom':0, 'padding': '1px 1px 1px 1px',    
+                        "verticalAlign": "top"
+               }), 
+             html.H1(children="x", style={'color': "#111111", 'textAlign': 'left', 'padding-left': 100, "font-size": "2.4rem", "line-height": "0.7em"}),   
+
+          html.Img(src=b64_image('assets/Paper1.jpg'),
+                        style={
+                        "display": "inline-block",
+                        "width": "75%",
+                        "height": "1200px",    
+                        "margin-left": "20px",
+                        "margin-right": "0px", 
+                        'marginTop':0,   
+                        'marginBottom':0, 'padding': '1px 1px 1px 1px',    
+                        "verticalAlign": "top"
+               }), 
+             html.H1(children="x", style={'color': "#111111", 'textAlign': 'left', 'padding-left': 100, "font-size": "2.4rem", "line-height": "0.7em"}),    
+
+             html.Img(src=b64_image('assets/Paper2.jpg'),
+                        style={
+                        "display": "inline-block",
+                        "width": "75%",
+                        "height": "1200px",    
+                        "margin-left": "20px",
+                        "margin-right": "0px", 
+                        'marginTop':0,   
+                        'marginBottom':0, 'padding': '1px 1px 1px 1px',    
+                        "verticalAlign": "top"
+               }), 
+             html.H1(children="x", style={'color': "#111111", 'textAlign': 'left', 'padding-left': 100, "font-size": "2.4rem", "line-height": "0.7em"}),    
             ])    
     
 @app.callback(Output("pie_graph", "figure"), 
